@@ -284,13 +284,10 @@ input:focus {
     padding: 2rem;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     margin: 0 auto;
-}
-
-.about-us img {
     width: 100%;
     max-width: 350px;
 }
@@ -302,12 +299,28 @@ input:focus {
 
 .about-us p {
     font-size: 1.4rem;
-    padding-top: 1rem 0 0;
+    padding-top: 1.5rem;
 }
 .about-us p:first-of-type {
     font-size: 1.8rem;
     font-weight: 500;
-    padding: 0;
+    padding-top: 0.3rem;
+}
+
+/* Data and Cookies */
+
+.data-and-cookies {
+    color: white;
+    padding: 2rem 2rem 4rem;
+}
+
+.data-and-cookies h2 {
+    font-size: 3.1rem;
+    text-align: center;
+    padding: 2rem 0 1rem;
+}
+.data-and-cookies p {
+    font-size: 1.4rem;
 }
 
 /* Footer */

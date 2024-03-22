@@ -38,7 +38,9 @@
                 echo "hide";
             } elseif ($_GET["page"] == "about_us"){
                 echo "hide";
-            }
+            } elseif ($_GET["page"] == "data_prot_and_cookeis"){
+                echo "hide";
+            } 
                 ?>">
                 <h1>
                     Find your <br />
