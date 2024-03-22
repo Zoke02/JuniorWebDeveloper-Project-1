@@ -1,7 +1,7 @@
         <footer>
             <div>
                 <ul>
-                    <a href="#"> <li>About us</li> </a
+                    <a href="006-about_us.php?page=about_us"> <li>About us</li> </a
                     ><a href="#"> <li>Data Protection & Cookies</li> </a
                     ><a href="#"> <li>Impressum</li> </a
                     ><a href="#">
@@ -10,7 +10,7 @@
                 </ul>
             </div>
             <div>
-                <a href="#logo">
+                <a href="000-index.php">
                     <div class="nav-bar__logo">A2Z</div>
                 </a>
             </div>

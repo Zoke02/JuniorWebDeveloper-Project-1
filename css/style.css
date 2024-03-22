@@ -2,6 +2,7 @@ html * {
     box-sizing: border-box;
     word-wrap: break-word;
     margin: 0;
+    letter-spacing: 0.2px;
 }
 
 html {
@@ -33,6 +34,14 @@ a {
     --emerald: #57cc99;
 }
 
+/* Typography  */
+
+/* h1 = 5.6 */
+/* h2 = 4.2 */
+/* h3 = 3.1 */
+/* h4 = 2 */
+/* h5 = 1.77 */
+
 /* TOP-Navication Bar */
 
 .nav-bar {
@@ -43,6 +52,7 @@ a {
     align-items: center;
     padding: 0 2rem;
     border-bottom: 4px solid var(--emerald);
+    /* border-bottom-right-radius:  */
 }
 
 .nav-bar__menu {
@@ -75,6 +85,27 @@ a {
     width: 3.2rem;
 }
 
+/* Categories */
+
+.categories {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--azure);
+}
+
+.categorie {
+    font-size: 2rem;
+    color: white;
+    border-bottom: 2px solid var(--verdigris);
+    width: 100vw;
+    text-align: center;
+    padding: 0.8rem 0;
+}
+
 /* Hero Section */
 
 .hero-box {
@@ -83,13 +114,16 @@ a {
     align-items: center;
     text-align: center;
     background: var(--azure);
-    padding: 3rem 0;
+    padding: 4rem 0;
+    flex-direction: column;
+    border-bottom: 4px solid var(--emerald);
+    gap: 2rem;
 }
 
 .hero-box h1 {
     color: white;
     font-weight: bold;
-    font-size: 3.5rem;
+    font-size: 4.2rem;
 }
 
 /* Search field */
@@ -99,9 +133,6 @@ a {
     justify-content: center;
     align-items: center;
     background: var(--azure);
-    height: 6.5rem;
-    border-bottom: 4px solid var(--emerald);
-    padding-bottom: 2rem;
 }
 
 .search-box__field {
@@ -110,12 +141,13 @@ a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
-    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    gap: 0.5rem;
 }
 
 .search-box__lens {
-    width: 2rem;
+    width: 2.5rem;
 }
 
 #search {
@@ -123,7 +155,7 @@ a {
     max-width: 25rem;
     border: none;
     padding: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 #search:focus {
@@ -132,15 +164,157 @@ a {
 
 /* Main */
 
-.placeholder-middle {
-    height: 120vh;
-    background: var(--emerald);
+main {
+    background: var(--azure);
+}
+/* Buttons */
+
+.btn {
+    background: var(--verdigris);
+    border: 2px solid var(--emerald);
+    border-radius: 20px;
+    color: white;
+    padding: 0.7rem 4rem;
+    font-size: 2rem;
+}
+
+.btn-secondary {
+    background: var(--azure);
+}
+
+/* Card */
+
+.hot-title {
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.card {
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    border: 2px solid var(--emerald);
+}
+
+.card h2 {
+    font-size: 2.6rem;
+}
+
+.card p {
+    font-size: 1.6rem;
+}
+
+.card .btn {
+    width: fit-content;
+    padding: 0.8rem 1.4rem;
+    border: none;
+    background-color: var(--verdigris);
+    font-size: 1.4rem;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+/* Login */
+
+.login {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem 7rem;
+    gap: 3.5rem;
+}
+
+.login h1 {
+    font-size: 4.2rem;
+}
+
+.login_row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.login_row:nth-child(2) {
+    gap: 1rem;
+}
+
+.login_row:last-of-type {
+    gap: 1.5rem;
+}
+
+input {
+    background: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 15px;
+    border: none;
+    font-size: 2rem;
+    width: 100vw;
+    max-width: 35.5rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+.login_label {
+    font-size: 2rem;
+}
+
+/* About us */
+
+.about-us {
+    padding: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.about-us img {
+    width: 100%;
+    max-width: 350px;
+}
+
+.about-us h3 {
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.about-us p {
+    font-size: 1.4rem;
+    padding-top: 1rem 0 0;
+}
+.about-us p:first-of-type {
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 0;
 }
 
 /* Footer */
 
 footer {
     background: var(--azure);
+    border-top: 4px solid var(--emerald);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,13 +323,13 @@ footer {
     gap: 2rem;
     padding: 4rem 2rem;
     color: white;
-    font-size: 1rem;
+    font-size: 1.33rem;
 }
 
 footer ul {
     list-style: none;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.77rem;
 }
 footer li {
     padding-bottom: 1rem;
@@ -163,4 +337,14 @@ footer li {
 
 footer a {
     color: white;
+}
+
+/* HIDE */
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
 }
