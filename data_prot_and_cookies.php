@@ -1,6 +1,6 @@
 <?php
-include "005-functions.php";
-include "001-head.php";
+include "functions.php";
+include "head.php";
 if ($_GET["page"] = "data_prot_and_cookeis") {
 ?>
 
@@ -34,5 +34,5 @@ if ($_GET["page"] = "data_prot_and_cookeis") {
 
 <?php
 }
-include "003-footer.php"
+include "footer.php"
 ?>

@@ -5,21 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>A2Z Jobs</title>
         <link rel="stylesheet" href="css/style.css" />
+        <script defer src="js/jquery-3.7.1.min.js"></script>
         <script defer src="js/main.js"></script>
     </head>
     <body>
         <header>
             <div class="nav-bar">
                 <img
+                    id="menu-toogle";
                     class="nav-bar__menu"
                     src="icons/menu-solid.svg"
                     alt=""
                 />
                 <div class="nav-bar-left-box">
-                    <a href="000-index.php?page=home">
+                    <a href="index.php?page=home">
                         <div class="nav-bar__logo">A2Z</div>
                     </a>
-                    <a href="004-login.php?page=login">
+                    <a href="login.php?page=login">
                         <img
                             class="nav-bar__login"
                             src="icons/user-solid.svg"

@@ -1,6 +1,6 @@
 <?php
-include "005-functions.php";
-include "001-head.php";
+include "functions.php";
+include "head.php";
 if ($_GET["page"] = "login") {
 ?>
 
@@ -26,5 +26,5 @@ if ($_GET["page"] = "login") {
 
 <?php
 }
-include "003-footer.php"
+include "footer.php"
 ?>
