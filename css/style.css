@@ -76,13 +76,29 @@ a {
     color: white;
     font-weight: 600;
     font-size: 2.2rem;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
     border: 2px solid var(--emerald);
 }
 
 .nav-bar__login {
     width: 3.2rem;
+}
+
+.nav-bar__user {
+    background: var(--verdigris);
+    /* width: 9rem; */
+    height: 6rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 2.2rem;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 2px solid var(--emerald);
 }
 
 /* Categories */

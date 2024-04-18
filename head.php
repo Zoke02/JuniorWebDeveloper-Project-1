@@ -11,39 +11,40 @@
     <body>
         <header>
             <div class="nav-bar">
-                <img
+                <a href="index.php">
+                        <div class="nav-bar__logo">A2Z</div>
+                    </a>
+                <div class="nav-bar-left-box">
+                    <?php if (isset(($_SESSION["logged_in"])) && $_SESSION["logged_in"]  == true) { ?>
+                        <a href="index.php" class="nav-bar__user">
+                            <?php
+                        echo $_SESSION["first_name"];
+                        ?>
+                    </a>
+                    <img
                     id="menu-toogle";
                     class="nav-bar__menu"
                     src="icons/menu-solid.svg"
                     alt=""
-                />
-                <div class="nav-bar-left-box">
-                    <a href="index.php?page=home">
-                        <div class="nav-bar__logo">A2Z</div>
-                    </a>
-                    <a href="login.php?page=login">
-                        <img
+                    />
+                    <?php } else { ?>
+                        <a href="login.php">
+                            <img
                             class="nav-bar__login"
                             src="icons/user-solid.svg"
                             alt=""
-                        />
-                    </a>
+                            />
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
-            <div class="menu hide"><?php insert_categories($categories) ?></div>
+            <div class="menu hide"></div>
 
             <div class="hero-box 
-            <?php 
-            if (!$_GET) {
+            <?php
                 echo "show";
-            } elseif ($_GET["page"] == "login"){ 
-                echo "hide";
-            } elseif ($_GET["page"] == "about_us"){
-                echo "hide";
-            } elseif ($_GET["page"] == "data_prot_and_cookeis"){
-                echo "hide";
-            } 
-                ?>">
+            ?>
+            ">
                 <h1>
                     Find your <br />
                     dreamjob!
