@@ -12,21 +12,21 @@
         <header>
             <div class="nav-bar">
                 <a href="index.php">
-                        <div class="nav-bar__logo">A2Z</div>
-                    </a>
+                    <div class="nav-bar__logo">A2Z</div>
+                </a>
                 <div class="nav-bar-left-box">
                     <?php if (isset(($_SESSION["logged_in"])) && $_SESSION["logged_in"]  == true) { ?>
-                        <a href="index.php" class="nav-bar__user">
-                            <?php
-                        echo $_SESSION["first_name"];
+                    <div class="nav-bar__user">
+                        <?php
+                        echo substr($_SESSION["first_name"], 0, 1) . "|" . substr($_SESSION["last_name"], 0, 1);
                         ?>
+                    </div>
                     </a>
                     <img
                     id="menu-toogle";
                     class="nav-bar__menu"
                     src="icons/menu-solid.svg"
-                    alt=""
-                    />
+                    alt=""/>
                     <?php } else { ?>
                         <a href="login.php">
                             <img
@@ -38,33 +38,12 @@
                     <?php } ?>
                 </div>
             </div>
-            <div class="menu hide"></div>
-
-            <div class="hero-box 
-            <?php
-                echo "show";
-            ?>
-            ">
-                <h1>
-                    Find your <br />
-                    dreamjob!
-                </h1>
-                <div class="search-box">
-                    <div class="search-box__field">
-                        <img
-                            class="search-box__lens"
-                            src="icons/magnifying-glass-solid.svg"
-                            alt=""
-                        />
-                        <form>
-                            <input
-                                type="search"
-                                name="search"
-                                id="search"
-                                placeholder="Search"
-                            />
-                        </form>
-                    </div>
+            <div class="menu hide">
+                <div class="categories" >
+                <a href='myaccount.php' class='categorie'>My Account</a>
+                </div>
+                <div class="categories" >
+                <a href='logout.php' class='categorie'>Logout</a>
                 </div>
             </div>
         </header>

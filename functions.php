@@ -7,12 +7,12 @@ const MYSQL_DATABANK = "a2z";
 
 session_start();
 
-function is_loggedin(){
-    if (empty($_SESSION["logged_in"])){
-        header("Location: login.php");
-        exit;
-    }
-}
+// function is_loggedin(){
+//     if (empty($_SESSION["logged_in"])){
+//         header("Location: login.php");
+//         exit;
+//     }
+// }
 
 spl_autoload_register(
     function (string $class) {

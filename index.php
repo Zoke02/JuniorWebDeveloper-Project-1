@@ -1,9 +1,32 @@
 <?php
 include "functions.php";
-is_loggedin();
+// is_loggedin();
 include "head.php";
 ?>
 <main>
+    <div class="hero-box">
+        <h1>
+            Find your <br />
+            dreamjob!
+        </h1>
+        <div class="search-box">
+            <div class="search-box__field">
+                <img
+                    class="search-box__lens"
+                    src="icons/magnifying-glass-solid.svg"
+                    alt=""
+                />
+                <form>
+                    <input
+                        type="search"
+                        name="search"
+                        id="search"
+                        placeholder="Search"
+                    />
+                </form>
+            </div>
+        </div>
+    </div>
     <h2 class="hot-title" >Newly added jobs!</h2>
     <div class="cards">
         <div class="card">

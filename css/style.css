@@ -41,12 +41,20 @@ a {
 /* h3 = 3.1 */
 /* h4 = 2 */
 /* h5 = 1.77 */
+h2 {
+    text-align: center;
+    font-size: 3.1rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
 
 /* TOP-Navication Bar */
 
 .nav-bar {
     background: var(--azure);
-    height: 9rem;
+    height: 15dvh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,7 +95,6 @@ a {
 
 .nav-bar__user {
     background: var(--verdigris);
-    /* width: 9rem; */
     height: 6rem;
     padding: 0 2rem;
     display: flex;
@@ -99,6 +106,7 @@ a {
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
     border: 2px solid var(--emerald);
+    letter-spacing: 0.1rem;
 }
 
 /* Categories */
@@ -254,7 +262,7 @@ main {
     justify-content: center;
     align-items: center;
     padding: 5rem 2rem 7rem;
-    gap: 3.5rem;
+    gap: 3rem;
 }
 
 .login h1 {
@@ -282,8 +290,7 @@ input {
     border-radius: 15px;
     border: none;
     font-size: 2rem;
-    width: 100vw;
-    max-width: 35.5rem;
+    width: 100%;
 }
 
 input:focus {
@@ -292,6 +299,52 @@ input:focus {
 
 .login_label {
     font-size: 2rem;
+}
+
+/* Logout */
+
+.logout {
+    height: 40dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    color: white;
+}
+
+.logout__link {
+    color: var(--emerald);
+    font-size: 2.8rem;
+}
+
+/* My Account */
+
+.myaccount {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    gap: 2rem;
+}
+
+.myaccount__block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.myaccount__p {
+    font-size: 1.77rem;
+    color: white;
+    font-weight: 400;
+}
+
+.myaccount__btn {
+    text-align: start;
+    font-size: 1.77rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 25rem;
 }
 
 /* About us */
@@ -342,6 +395,7 @@ input:focus {
 /* Footer */
 
 footer {
+    height: 45dvh;
     background: var(--azure);
     border-top: 4px solid var(--emerald);
     display: flex;
@@ -350,7 +404,7 @@ footer {
     align-items: center;
     text-align: center;
     gap: 2rem;
-    padding: 4rem 2rem;
+    padding: 0 2rem;
     color: white;
     font-size: 1.33rem;
 }

@@ -16,16 +16,19 @@ if (!empty($_POST))
     if (!$validate->is_errors()) {
         $db = Mysql::getInstanz();
         $sql_email = $db->escape($_POST["email"]);
+        $sql_password = $db->escape($_POST["password"]);
         $result = $db->query("SELECT * FROM user WHERE email = '{$sql_email}'");
         $user = $result->fetch_assoc();
         // echo "<pre>";
         // print_r($user);
         // echo "</pre>";
-        if (empty($user) || !password_verify($_POST["password"], $user["password"])) 
+        // if (empty($user) || !password_verify($_POST["password"], $user["password"]))
+        if (empty($user) || !password_verify($sql_password, $user["password"]))
         {
             $validate->error_entry("E-Mail or Password is FALSE.");
         } else {
             $_SESSION["logged_in"] = true;
+            $_SESSION["id"] = $user["id"];
             $_SESSION["first_name"] = $user["first_name"];
             $_SESSION["last_name"] = $user["last_name"];
             $_SESSION["email"] = $user["email"];
@@ -42,13 +45,13 @@ if (!empty($_POST))
         <h1>
             Login
         </h1>
-        <h2>
+        <h3>
         <?php
             if (!empty($validate)) {
             echo $validate->error_html();
             }
         ?>
-        </h2>
+        </h3>
         <div class="login_row">
             <label class="login_label" for="">E-Mail</label>
             <input type="text" class="email" name="email" />
