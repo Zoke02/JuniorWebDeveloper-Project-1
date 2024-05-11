@@ -43,6 +43,9 @@
                 <a href='myaccount.php' class='categorie'>My Account</a>
                 </div>
                 <div class="categories" >
+                <a href='newjob.php' class='categorie'>Create new Job</a>
+                </div>
+                <div class="categories" >
                 <a href='logout.php' class='categorie'>Logout</a>
                 </div>
             </div>

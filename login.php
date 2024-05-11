@@ -60,7 +60,6 @@ if (!empty($_POST))
         </div>
         <div class="login_row">
             <button class="btn btn-secondary" type="submit">Login</button>
-            <!-- <a href="signup.php"><button class="btn">Sing up now!</button></a> -->
         </div>
     </form>
 </main>
