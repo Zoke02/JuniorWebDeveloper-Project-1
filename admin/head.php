@@ -15,11 +15,13 @@
                     <div class="nav-bar__logo">A2Z</div>
                 </a>
                 <div class="nav-bar-left-box">
-                    <?php if (isset(($_SESSION["logged_in"])) && $_SESSION["logged_in"]  == true) { ?>
-                    <div class="nav-bar__user">
-                        <?php
-                        echo substr($_SESSION["first_name"], 0, 1) . "|" . substr($_SESSION["last_name"], 0, 1);
-                        ?>
+                    <a class="" href="myaccount.php">
+                        <?php if (isset(($_SESSION["logged_in"])) && $_SESSION["logged_in"]  == true) { ?>
+                        <div class="nav-bar__user">
+                            <?php
+                            echo substr($_SESSION["first_name"], 0, 1) . "|" . substr($_SESSION["last_name"], 0, 1);
+                            ?>
+                    </a>
                     </div>
                     </a>
                     <img
@@ -44,6 +46,20 @@
                 </div>
                 <div class="categories" >
                 <a href='newjob.php' class='categorie'>Create new Job</a>
+                </div>
+                
+                <?php if (($_SESSION["admin"]) == 1){ ?>
+                <div class="categories" >
+                    <a href='jobslist.php' class='categorie'>Jobs Administration</a>
+                </div>
+                <?php } else { ?>
+                <div class="categories" >
+                    <a href='jobslist.php' class='categorie'>Your Jobs</a>
+                </div>
+                <?php } ?>
+                        
+                <div class="categories" >
+                <a href='alljobslist.php' class='categorie'>All Jobs List</a>
                 </div>
                 <div class="categories" >
                 <a href='logout.php' class='categorie'>Logout</a>
