@@ -11,10 +11,6 @@ include "head.php";
 
 $success = false;
 
-// echo "<pre>";
-// print_r($_POST);
-// echo "</pre>";
-
 if (!empty($_POST))  {
     $validate = new Validate;
     $validate->is_formular_filled($_POST["job_title"], "Job Title");

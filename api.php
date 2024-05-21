@@ -1,6 +1,6 @@
 <?php
 require "admin/functions.php";
-use WIFI\JWE23\DataBanking\Validate;
+
 use WIFI\JWE23\DataBanking\MySql;
 use WIFI\JWE23\DataBanking\Model\Categories;
 use WIFI\JWE23\DataBanking\Model\Jobs;
@@ -27,7 +27,7 @@ $parameter = explode("/", $teile[1]);
 $api_version = ltrim(array_shift($parameter), "vV"); // Kleines u. großes V auf der LINKEN Seite entfernen
 
 if (empty($api_version)) {
-    fehler("Bitte geben Sie eine API-Version an");
+    fehler("Please select a version. (Jobs or Categories)");
 }
 
 // leere Einträge aus Parameter-Array entfernen
@@ -44,7 +44,7 @@ foreach ($parameter as $k => $v) {
 $parameter = array_values($parameter);
 
 if (empty($parameter)) {
-    fehler("Nach der Version wurde keine Methode übergeben. Prüfen Sie Ihren Aufruf!");
+    fehler("After you selected a version next write what results you want from DataBase.");
 }
 // echo "gut";
 
@@ -54,73 +54,105 @@ if (empty($parameter)) {
 //--
 //--ab hier Spezifizierung je nach Anwendzngsbedarf
 
-if ($parameter[0] == "list") {
-    $ausgabe = array(
-        "status" => 1,
-        "result" => array()
-    );
-
-    $jobs = new Jobs;
-    $all_jobs = $jobs->get_all_jobs();
-
-    foreach ($jobs as $row){
-        $ausgabe["result"][] = $row;
-    }
-
-    // print_r($result);
-
-    echo json_encode($ausgabe);
-    exit;
-} elseif ($parameter[0] == "jobs") {
-
-    if(!empty($parameter[1])) {
-        // ID wurde übergeben
-        $ausgabe = array(
+if ($api_version == "jobs") {
+    
+    if ($parameter[0] == "list") {
+        $result = array(
             "status" => 1,
             "result" => array()
         );
-
-        // Rezeptedaten ermitteln
-        $sql_rezepte_id = escape($parameter[1]);
-        $result = query("SELECT * FROM rezepte WHERE id = '{$sql_rezepte_id}'");
-        $rezept = mysqli_fetch_assoc($result);
-        if (!$rezept) {
-            fehler("Mit dieser ID'{$parameter[1]}' wurde kein Rezept gefunden!");
+        
+        $jobs = new Jobs;
+        $all_jobs = $jobs->get_all_jobs();
+        
+        foreach ($all_jobs as $row){
+            $result["result"][] = $row;
         }
-        $ausgabe["result"] = $rezept; 
-
-        // Benutzerdaten ermitteln und an die Ausgabe anhängen
-        $result = query("SELECT id, benutzername, email FROM benutzer WHERE id = '{$rezept["benutzer_id"]}'");
-        $ausgabe["benutzer"] = mysqli_fetch_assoc($result);
-
-        //Zutaten ermitteln und an Ausgabe anhängen
-        $result = query("SELECT zutaten.* FROM zutaten_zu_rezepte JOIN zutaten 
-        ON zutaten_zu_rezepte.zutaten_id = zutaten.id 
-        WHERE zutaten_zu_rezepte.rezepte_id = '{$sql_rezepte_id}' 
-        ORDER BY zutaten_zu_rezepte.id");
-
-        $ausgabe["zutaten"] = array();
-        while ($zutat = mysqli_fetch_assoc($result)){
-            $ausgabe["zutaten"][] = $zutat;
-        }
-
-
-        echo json_encode($ausgabe); // Umwandlung eines Array in JSON
+        
+        echo json_encode($result);
         exit;
-    } else {
-    // Liste der Rezepte
-        $ausgabe = array(
+    } elseif (!check_if_id_in_database(($parameter[0]), $api_version)) { 
+        $result = array(
+            "status" => 0,
+            "result" => array()
+        );
+        $result["result"][] = "Job with ID: $parameter[0] is not in DataBase '$api_version'";
+        echo json_encode($result);
+        exit;
+
+    } elseif (check_if_id_in_database(($parameter[0]), $api_version)) { 
+
+        $result = array(
             "status" => 1,
             "result" => array()
         );
-        $result = query("SELECT * FROM rezepte ORDER BY id ASC");
-        while ($row = mysqli_fetch_assoc($result)){
-            $ausgabe["result"][] = $row;
-        }
-
-        echo json_encode($ausgabe); // Umwandlung eines Array in JSON
+    
+        $jobs = new Jobs;
+        $one_job = $jobs->get_row_from_id($parameter[0], $api_version);
+        $result["result"][] = $one_job;
+        echo json_encode($result);
         exit;
     }
-} else {
-    fehler("Die methode '{$parameter[0]}' existiert nicht.");
 }
+
+if ($api_version == "categories") {
+    if ($parameter[0] == "list" && empty($parameter[1])) {
+        $result = array(
+            "status" => 1,
+            "result" => array()
+        );
+        
+        $jobs = new Jobs;
+        $all_jobs = $jobs->get_all_categories();
+        
+        foreach ($all_jobs as $row){
+            $result["result"][] = $row;
+        }
+        echo json_encode($result);
+        exit;
+    } elseif (!check_if_id_in_database(($parameter[0]), $api_version) && empty($parameter[1])) { 
+        // print_r(check_if_job_in_database($parameter[0]));
+        $result = array(
+            "status" => 0,
+            "result" => array()
+        );
+        $result["result"][] = "Categories with ID: $parameter[0] is not in DataBase '$api_version'";
+        echo json_encode($result);
+        exit;
+
+    } elseif (check_if_id_in_database(($parameter[0]), $api_version) && empty($parameter[1])) {
+        $result = array(
+            "status" => 1,
+            "result" => array()
+        );
+    
+        $categories = new Jobs;
+        $one_categorie = $categories->get_row_from_id($parameter[0], $api_version);
+        $result["result"][] = $one_categorie;
+        echo json_encode($result);
+        exit;
+    } elseif (check_if_id_in_database(($parameter[0]), $api_version) && $parameter[1] != "jobs")
+    {
+        $result = array(
+            "status" => 0,
+            "result" => array()
+        );
+        $result["result"][] = "After categodie/id/ you selected a false API.";
+        echo json_encode($result);
+        exit;
+    } elseif (check_if_id_in_database(($parameter[0]), $api_version) && $parameter[1] == "jobs")
+    {
+        $result = array(
+            "status" => 1,
+            "result" => array()
+        );
+    
+        $categories = new Jobs;
+        $all_categorie = $categories->get_all_categories_by_id($parameter[0], $parameter[1]);
+        $result["result"][] = $all_categorie;
+        echo json_encode($result);
+        exit;
+    }
+}
+
+    

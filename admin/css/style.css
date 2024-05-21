@@ -114,6 +114,7 @@ header a {
 
 .nav-bar__user {
     background: var(--verdigris);
+    width: 9rem;
     height: 6rem;
     padding: 0 2rem;
     display: flex;

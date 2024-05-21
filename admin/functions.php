@@ -1,18 +1,17 @@
 <?php
 
+use WIFI\JWE23\DataBanking\MySql;
+use WIFI\JWE23\DataBanking\Model\Categories;
+use WIFI\JWE23\DataBanking\Model\Jobs;
+use WIFI\JWE23\DataBanking\Model\Row\Categorie;
+use WIFI\JWE23\DataBanking\Model\Row\Job;
+
 const MYSQL_HOST = "localhost";
 const MYSQL_USER = "root";
 const MYSQL_PASSWORD = "";
 const MYSQL_DATABANK = "a2z";
 
 session_start();
-
-// function is_loggedin(){
-//     if (empty($_SESSION["logged_in"])){
-//         header("Location: login.php");
-//         exit;
-//     }
-// }
 
 spl_autoload_register(
     function (string $class) {
@@ -43,3 +42,16 @@ spl_autoload_register(
         }
     }
 );
+
+function check_if_id_in_database($sql_id, $sql_table) {
+    $id = "";
+    $db = Mysql::getInstanz();
+    $result = $db->query("SELECT id FROM $sql_table WHERE id = $sql_id");
+    while ($row = $result->fetch_assoc()) 
+    {   
+        if ($row = $sql_id) {
+            $id = $row;
+        }
+    }
+    return $id;
+}

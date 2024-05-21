@@ -6,73 +6,64 @@ use WIFI\JWE23\DataBanking\Model\Row\Job;
 
 class Jobs {
 
+    // get all visible jobs and create on abject
     public function all_jobs(): array
     {
         $all_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM job WHERE status = 1 ORDER BY created_on DESC");
-        
-        // print_r($result);
-        // exit;
-
+        $result = $db->query("SELECT * FROM jobs WHERE status = 1 ORDER BY created_on DESC");
         while ($row = $result->fetch_assoc()) 
         {   
-
-            // print_r($row);
-            // exit;
-
             $all_jobs[] = new Job($row);
         }
         return $all_jobs;
     }
 
+    // get all jobs both visible and hidden for admin
     public function all_jobs_admin(): array
     {
         $all_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM job ORDER BY created_on DESC");
-        
-        // print_r($result);
-        // exit;
-
+        $result = $db->query("SELECT * FROM jobs ORDER BY created_on DESC");
         while ($row = $result->fetch_assoc()) 
         {   
-
-            // print_r($row);
-            // exit;
-
             $all_jobs[] = new Job($row);
         }
         return $all_jobs;
     }
 
+    // get all jobs from a specific company
+    public function all_jobs_from_user($sql_id): array
+    {
+        $all_jobs = array();
+        $db = Mysql::getInstanz();
+        $result = $db->query("SELECT * FROM jobs WHERE user_id = $sql_id ORDER BY id ASC");
+        while ($row = $result->fetch_assoc()) 
+        {   
+            $all_jobs[] = new Job($row);
+        }
+        return $all_jobs;
+    }
 
+    // show last 3 jobs in Database in HomePage
     public function last_jobs_vissible(): array
     {
         $last_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM job WHERE status = 1 ORDER BY id DESC LIMIT 3");
-        
-        // print_r($result);
-        // exit;
-
+        $result = $db->query("SELECT * FROM jobs WHERE status = 1 ORDER BY id DESC LIMIT 3");
         while ($row = $result->fetch_assoc()) 
         {   
-
-            // print_r($row);
-            // exit;
-
             $last_jobs[] = new Job($row);
         }
         return $last_jobs;
     }
 
-    public function all_jobs_from_user($sql_id): array
+    // get all visible jobs as array for json
+    public function get_all_jobs(): array
     {
         $all_jobs = array();
         $db = Mysql::getInstanz();
-        // $sql_id = $_SESSION["id"];
-        $result = $db->query("SELECT * FROM job WHERE user_id = '{$sql_id}' ORDER BY id ASC");
+        $result = $db->query("SELECT * FROM jobs WHERE status = 1 ORDER BY id DESC");
         
         // print_r($result);
         // exit;
@@ -83,28 +74,43 @@ class Jobs {
             // print_r($row);
             // exit;
 
-            $all_jobs[] = new Job($row);
+            $all_jobs[] = $row;
         }
         return $all_jobs;
     }
 
-    public function get_all_jobs(): array
+    public function get_all_categories(): array
     {
         $all_categories = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM jobs ORDER BY name ASC");
-        
-        // print_r($result);
-        // exit;
-
+        $result = $db->query("SELECT * FROM categories ORDER BY id ASC");
         while ($row = $result->fetch_assoc()) 
         {   
-
-            // print_r($row);
-            // exit;
-
             $all_categories[] = $row;
         }
         return $all_categories;
+    }
+    public function get_all_categories_by_id($sql_id, $sql_table): array
+    {
+        $all_categories = array();
+        $db = Mysql::getInstanz();
+        $result = $db->query("SELECT * FROM $sql_table WHERE categorie_id = $sql_id");
+        while ($row = $result->fetch_assoc()) 
+        {   
+            $all_categories[] = $row;
+        }
+        return $all_categories;
+    }
+
+    public function get_row_from_id($sql_id, $table): array
+    {
+        $job = array();
+        $db = Mysql::getInstanz();
+        $result = $db->query("SELECT * FROM $table WHERE id = $sql_id ");
+        while ($row = $result->fetch_assoc()) 
+        {   
+            $job[] = $row;
+        }
+        return $job;
     }
 }

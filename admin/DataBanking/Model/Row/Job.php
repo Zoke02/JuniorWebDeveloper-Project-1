@@ -3,7 +3,7 @@ namespace WIFI\JWE23\DataBanking\Model\Row;
 
 class Job extends RowAbstract
 {
-    protected string $tabel = "job";
+    protected string $tabel = "jobs";
 
     public function get_categorie(): Categorie 
     {
