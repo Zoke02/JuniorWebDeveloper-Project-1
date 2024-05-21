@@ -367,6 +367,7 @@ input:focus {
 .logout__link {
     color: var(--emerald);
     font-size: 2.8rem;
+    text-align: center;
 }
 
 /* My Account */
@@ -454,7 +455,7 @@ input:focus {
 /* JOB CARD */
 
 .main-job-card {
-    height: 40dvh;
+    min-height: 40dvh;
     padding: 0 2rem 8rem;
     display: flex;
     flex-direction: column;
@@ -472,10 +473,16 @@ input:focus {
     color: white;
 }
 
+.job-card__categories {
+    padding: 0 2rem 2rem;
+}
+
 .job-card__form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+    max-width: 475px;
 }
 
 .job-card__checkbox {
@@ -484,22 +491,29 @@ input:focus {
     justify-content: flex-start;
     align-items: center;
     gap: 2rem;
-    padding: 2rem 0;
+}
+
+.job-card__categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 #status {
     transform: scale(1.8);
     accent-color: var(--emerald);
     display: block;
+    margin-bottom: -7rem;
 }
 
 .job-card__label {
     font-size: 2rem;
     padding: 2rem 0 0.5rem;
 }
-.job-card__label:first-of-type {
+/* .job-card__label:first-of-type {
     padding: 0;
-}
+} */
 
 .job-card__select {
     background: white;

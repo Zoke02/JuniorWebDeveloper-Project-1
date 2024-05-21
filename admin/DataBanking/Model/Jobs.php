@@ -90,6 +90,7 @@ class Jobs {
         }
         return $all_categories;
     }
+    
     public function get_all_categories_by_id($sql_id, $sql_table): array
     {
         $all_categories = array();

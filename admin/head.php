@@ -57,6 +57,12 @@
                     <a href='jobslist.php' class='categorie'>Your Jobs</a>
                 </div>
                 <?php } ?>
+
+                <?php if (($_SESSION["admin"]) == 1){ ?>
+                <div class="categories" >
+                    <a href='categorieslist.php' class='categorie'>Categories Administration</a>
+                </div>
+                <?php } ?>
                         
                 <div class="categories" >
                 <a href='alljobslist.php' class='categorie'>All Jobs List</a>

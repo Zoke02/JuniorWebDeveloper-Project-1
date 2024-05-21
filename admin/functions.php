@@ -55,3 +55,8 @@ function check_if_id_in_database($sql_id, $sql_table) {
     }
     return $id;
 }
+
+function escape($post_var) {
+    global $db; //keyword global um die $DB Variable vom globalen scope zu übernehmen
+    return mysqli_real_escape_string($db, $post_var);
+}
