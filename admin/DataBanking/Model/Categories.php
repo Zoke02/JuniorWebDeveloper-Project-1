@@ -10,7 +10,7 @@ class Categories {
     {
         $all_categories = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM categories ORDER BY name ASC");
+        $result = $db->query("SELECT * FROM categories ORDER BY categorie_name ASC");
         
         // print_r($result);
         // exit;
@@ -29,7 +29,7 @@ class Categories {
     {
         $all_categories = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM categories ORDER BY name ASC");
+        $result = $db->query("SELECT * FROM categories ORDER BY categorie_name ASC");
         
         // print_r($result);
         // exit;

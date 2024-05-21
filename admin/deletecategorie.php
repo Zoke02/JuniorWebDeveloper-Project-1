@@ -22,7 +22,7 @@ if (!empty($error))
 {    
 echo "<main class='main-job-card'>";
     echo "<h2 class='job-card__h2'>";
-        echo "You cant DELETE Categorie $categorie->name because one or more Jobs are useing it.";
+        echo "You cant DELETE Categorie $categorie->categorie_name because one or more Jobs are useing it.";
     echo "</h2>";
     echo '<a class="job-card__h3 logout__link" href="categorieslist.php">Back to List of Categories</a>';
 echo "</main>";

@@ -23,9 +23,9 @@ if (!empty($_POST))  {
 
     if (!$validate->is_errors()) {
         
-        $status = "0";
+        $status = "Hidden";
         if (isset($_POST["status"])) {
-            $status = "1";
+            $status = "Visible";
         }
 
         if (!empty($_GET["id"])) 
@@ -109,9 +109,9 @@ if (!empty($_POST))  {
                 <span><input  type="checkbox" id="status" name="status" <?php 
                 if (!empty($_GET["id"]) && (!isset($_POST["status"])))
                 {
-                    if ($job->status == 1) {
+                    if ($job->status == 'Visible') {
                     echo "checked";
-                    } else if ($job->status == 0) {
+                    } else if ($job->status == 'Hidden') {
                     echo "";
                     }
                 }
@@ -143,7 +143,7 @@ if (!empty($_POST))  {
                     echo '<option value="';
                     echo $categorie->id;
                     echo '">';
-                    echo $categorie->name;
+                    echo $categorie->categorie_name;
                     echo '<option>';
                 }
                 ?>
@@ -160,7 +160,7 @@ if (!empty($_POST))  {
                     echo '<option value="';
                     echo $qualification->id;
                     echo '">';
-                    echo $qualification->name;
+                    echo $qualification->qualification_name;
                     echo '<option>';
                 }
                 ?>

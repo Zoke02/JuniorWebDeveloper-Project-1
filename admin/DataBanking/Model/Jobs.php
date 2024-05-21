@@ -11,7 +11,7 @@ class Jobs {
     {
         $all_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM jobs WHERE status = 1 ORDER BY created_on DESC");
+        $result = $db->query("SELECT * FROM jobs WHERE status = 'Visible' ORDER BY created_on DESC");
         while ($row = $result->fetch_assoc()) 
         {   
             $all_jobs[] = new Job($row);
@@ -50,7 +50,7 @@ class Jobs {
     {
         $last_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM jobs WHERE status = 1 ORDER BY id DESC LIMIT 3");
+        $result = $db->query("SELECT * FROM jobs WHERE status = 'Visible' ORDER BY id DESC LIMIT 3");
         while ($row = $result->fetch_assoc()) 
         {   
             $last_jobs[] = new Job($row);
@@ -63,7 +63,12 @@ class Jobs {
     {
         $all_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM jobs WHERE status = 1 ORDER BY id DESC");
+        $result = $db->query("SELECT * FROM jobs
+        INNER JOIN categories ON jobs.categorie_id = categories.id
+        INNER JOIN qualifications ON jobs.qualification_id = qualifications.id
+        WHERE status = 'Visible'
+        ORDER BY jobs.id ASC
+        ");
         
         // print_r($result);
         // exit;
@@ -95,7 +100,10 @@ class Jobs {
     {
         $all_categories = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM $sql_table WHERE categorie_id = $sql_id");
+        $result = $db->query("SELECT * FROM $sql_table 
+        INNER JOIN categories ON jobs.categorie_id = categories.id
+        INNER JOIN qualifications ON jobs.qualification_id = qualifications.id
+        WHERE categorie_id = $sql_id");
         while ($row = $result->fetch_assoc()) 
         {   
             $all_categories[] = $row;

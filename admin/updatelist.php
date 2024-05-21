@@ -15,7 +15,7 @@ if (!empty($_POST))
 {
     $categorie = new Categorie(array(
         "id" => $_GET["id"],
-        "name" => $_POST["name"]
+        "categorie_name" => $_POST["name"]
     ));
     $categorie->save();
     $success = true;
@@ -51,11 +51,11 @@ if ($success) {
 
     <form class="job-card" action="updatelist.php?id= <?php echo $categorie->id ?>" method="post">
         <div class="job-card__form">
-            <label class="job-card__label">Update from: <?php echo $categorie->name; ?></label>
+            <label class="job-card__label">Update from: <?php echo $categorie->categorie_name; ?></label>
             <label class="job-card__label" for="name">Update to:</label>
             <input class="job-card__input" type="text" name="name" id="name" value="<?php 
             if (!empty($categorie)) {
-                echo htmlspecialchars($categorie->name);
+                echo htmlspecialchars($categorie->categorie_name);
             }
             ?>">
             <div class="job_card__btn">

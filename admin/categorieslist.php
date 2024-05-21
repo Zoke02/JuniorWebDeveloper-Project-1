@@ -16,7 +16,7 @@ if (empty($_POST["categorie"])) {
     $categorie_exists = "";
 } else {
     foreach ($all_categories as $categories) {
-        if (strtolower($categories->name) == strtolower($_POST["categorie"])) {
+        if (strtolower($categories->categorie_name) == strtolower($_POST["categorie"])) {
             $categorie_exists = "A Categorie with the same name already exists.";
         }
     }
@@ -27,22 +27,12 @@ if (!empty($_POST) && !empty($_GET["id"]))
 {
     $categorie = new Categorie(array(
         "id" => null,
-        "name" => $_POST["categorie"]
+        "categorie_name" => $_POST["categorie"]
     ));
     $categorie->save();
     $success = true;
 }
 
-
-
-// if ($success && empty($categorie_exists)) {
-//     echo "<main class='main-job-card'>";
-//     echo "<h2 class='job-card__h2'>";
-//     echo "Categorie was Created";
-//     echo "</h2>";
-//     echo '<a class="job-card__h3 logout__link" href="categorieslist.php">Back to List of Categories</a>';
-//     echo "</main>";
-// }
 if (!empty($categorie_exists)) {
     echo "<main class='main-job-card'>";
     echo "<h2 class='job-card__h2'>";
@@ -55,7 +45,7 @@ echo "</main>";
     {
         $categorie = new Categorie(array(
             "id" => null,
-            "name" => $_POST["categorie"]
+            "categorie_name" => $_POST["categorie"]
         ));
         $categorie->save();
         $success = true;
@@ -95,7 +85,7 @@ else {
         echo '<div class="cards">';
             echo '<div class="card">';
                 echo '<h2 class="card__title">';
-                    echo $categorie->name;
+                    echo $categorie->categorie_name;
                 echo '</h2>';
                 echo "<div class='card__btn-divider'>";
                     echo '<button class="btn">';
