@@ -1,5 +1,6 @@
 <?php
 include "functions.php";
+include "expiration_functions.php";
 use WIFI\JWE23\DataBanking\Validate;
 use WIFI\JWE23\DataBanking\MySql;
 use WIFI\JWE23\DataBanking\Model\Categories;
@@ -7,6 +8,11 @@ use WIFI\JWE23\DataBanking\Model\Jobs;
 use WIFI\JWE23\DataBanking\Model\Row\Categorie;
 use WIFI\JWE23\DataBanking\Model\Row\Job;
 include "head.php";
+
+// RUN CRONJOB HERE: expiration_functions.php
+hide_after_90_days();
+delete_after_365_days();
+
 ?>
 <main>
     <div class="hero-box">

@@ -25,7 +25,7 @@ abstract class RowAbstract
     {
         if (!array_key_exists($eigenschaft, $this->data))
         {
-            throw new \Exception("The collumn {$eigenschaft} does not exist in the Tablel {$this->tabel}");
+            throw new \Exception("The collumn {$eigenschaft} does not exist in the Table {$this->tabel}");
         }
 
         return $this->data[$eigenschaft];
