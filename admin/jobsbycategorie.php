@@ -1,4 +1,4 @@
-<?php
+<?php 
 include "functions.php";
 use WIFI\JWE23\DataBanking\Validate;
 use WIFI\JWE23\DataBanking\MySql;
@@ -8,12 +8,8 @@ use WIFI\JWE23\DataBanking\Model\Row\Categorie;
 use WIFI\JWE23\DataBanking\Model\Row\Job;
 include "head.php";
 
-// RUN CRONJOB HERE: expiration_functions.php
-include "expiration_functions.php";
-hide_after_90_days();
-delete_after_365_days();
-
 ?>
+
 <main>
     <div class="hero-box">
         <h1>
@@ -27,26 +23,29 @@ delete_after_365_days();
                     src="icons/magnifying-glass-solid.svg"
                     alt=""
                 />
-                <div>
+                <form>
                     <input
                         type="search"
                         name="search"
                         id="search"
                         placeholder="Search"
                     />
-                </div>
+                </form>
             </div>
         </div>
-        <a class="btn" href="alljobslist.php">List of All Jobs</a>
     </div>
-        <h2 class="hot-title" >Last 3 added jobs!</h2>
+    </div>
         <?php
-        $jobs = new Jobs;
-        $all_jobs = $jobs->last_jobs_vissible();
-
-        foreach ($all_jobs as $job) {
+        if (!empty($_GET["id"])) {
+            $jobs = new Jobs;
+            $all_jobs = $jobs->all_jobs_from_categorie($_GET["id"]);
+            echo '<h2 class="job-card__h2" >' . "Jobs in Categorie:" . '</h2>';
+            foreach ($all_jobs as $job)
+            {
             $created_on = $job->created_on;
             $display_date = date("d-m-Y", strtotime($created_on));
+            $modified_on = $job->modified_on;
+            $display_modified = date("d-m-Y", strtotime($modified_on));
             echo '<div class="cards">';
                 echo '<div class="card">';
                     echo '<h2 class="card__title">';
@@ -60,22 +59,37 @@ delete_after_365_days();
                         echo "<li>" . "Hours: " . $job->hours . "</li>";
                         echo "<li>" . "Sarary: " . $job->salary . "</li>";
                         echo "<li>" . "Created: " .  $display_date . "</li>";
+                        if ($job->modified_on) {
+                            echo "<li>" . "Last Updated: " .  $modified_on . "</li>";
+                        } else {
+                            echo "<li>" . "Last Updated: Never" . "</li>";
+                        }
                         echo "<ul>";
                     echo '</div>';
-                    echo "<p class='hide'>";
+                    echo "<p>";
                     echo nl2br($job->description);
                     echo "</p>";
                     echo "<div class='card__btn-divider'>";
                     echo '<button class="btn">';
-                    echo "More info...";
+                    echo "Less info...";
                     echo "</button>";
                     echo "</div>";
                 echo "</div>";
+            echo "</div>";
+            }
+        } else {
+            echo "<div class='main-job-card'>";
+            echo "<h2 class='job-card__h2'>";
+            echo "Wrong Page";
+            echo "</h2>";
+            echo '<a class="job-card__h3 logout__link" href="index.php">Back to HomePage</a>';
             echo "</div>";
         }
         ?>
     </div>
 </main>
+
+
 <?php
 include "footer.php"
 ?>

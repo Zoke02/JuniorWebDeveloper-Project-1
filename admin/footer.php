@@ -1,12 +1,9 @@
         <footer>
             <div>
                 <ul>
-                    <a href="about_us.php?page=about_us"> <li>About us</li> </a
-                    ><a href="data_prot_and_cookies.php?page=data_prot_and_cookeis"> <li>Data Protection & Cookies</li> </a
-                    ><a href="#"> <li>Impressum</li> </a
-                    ><a href="#">
-                        <li>Contact us</li>
-                    </a>
+                    <a href="about_us.php"> <li>About Us</li> </a>
+                    <a href="data_prot_and_cookies.php"> <li>Data Protection & Cookies</li> </a>
+                    <a href="contact.php"> <li>Contact Us</li> </a>
                 </ul>
             </div>
             <div>

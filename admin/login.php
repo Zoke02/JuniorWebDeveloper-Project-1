@@ -1,10 +1,12 @@
 <?php
+
 include "functions.php";
+include "head.php";
 use WIFI\JWE23\DataBanking\Validate;
 use WIFI\JWE23\DataBanking\MySql;
-include "head.php";
 
 // print_r($_POST);
+
 
 if (!empty($_POST)) 
 {
@@ -34,7 +36,22 @@ if (!empty($_POST))
             $_SESSION["email"] = $user["email"];
             $_SESSION["firm"] = $user["firm"];
             $_SESSION["admin"] = $user["admin"];
-            header("Location: index.php");
+            if (!headers_sent())
+            {    
+                header('Location: index.php');
+                exit;
+                }
+            else
+                {  
+                echo '<script type="text/javascript">';
+                echo 'window.location.href="index.php";';
+                echo '</script>';
+                echo '<noscript>';
+                echo '<meta http-equiv="refresh" content="0;url=index.php" />';
+                echo '</noscript>'; exit;
+            }
+
+            // header("Location: index.php");
             exit;
         }
     }

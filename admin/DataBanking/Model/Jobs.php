@@ -45,6 +45,19 @@ class Jobs {
         return $all_jobs;
     }
 
+    // get all jobs from a specific company
+    public function all_jobs_from_categorie($sql_id): array
+    {
+        $all_jobs = array();
+        $db = Mysql::getInstanz();
+        $result = $db->query("SELECT * FROM jobs WHERE categorie_id = $sql_id ORDER BY id DESC");
+        while ($row = $result->fetch_assoc()) 
+        {   
+            $all_jobs[] = new Job($row);
+        }
+        return $all_jobs;
+    }
+
     // show last 3 jobs in Database in HomePage
     public function last_jobs_vissible(): array
     {
@@ -83,6 +96,7 @@ class Jobs {
         }
         return $all_jobs;
     }
+
 
     public function get_all_categories(): array
     {
