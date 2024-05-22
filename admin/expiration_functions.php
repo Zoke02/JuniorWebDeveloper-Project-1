@@ -1,9 +1,6 @@
 <?php
 
-use WIFI\JWE23\DataBanking\MySql;
-use WIFI\JWE23\DataBanking\Model\Categories;
 use WIFI\JWE23\DataBanking\Model\Jobs;
-use WIFI\JWE23\DataBanking\Model\Row\Categorie;
 use WIFI\JWE23\DataBanking\Model\Row\Job;
 
 
