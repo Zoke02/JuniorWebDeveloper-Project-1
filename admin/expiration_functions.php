@@ -1,6 +1,5 @@
 <?php
 
-include "functions.php";
 use WIFI\JWE23\DataBanking\MySql;
 use WIFI\JWE23\DataBanking\Model\Categories;
 use WIFI\JWE23\DataBanking\Model\Jobs;
