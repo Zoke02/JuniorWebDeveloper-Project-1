@@ -113,13 +113,15 @@ if (!empty($_POST))  {
                     echo "checked";
                     } else if ($job->status == 'Hidden') {
                     echo "";
-                    }
+                    } 
                 }
+
                 if (!isset($_POST["status"])) {
                     echo "";
                 } else if (isset($_POST["status"])) {
                     echo "checked";
                 }
+                
                 ?> /></span>
             </div>
             <label class="job-card__label" for="job_title">Job Title:</label>

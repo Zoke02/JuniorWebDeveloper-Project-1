@@ -54,7 +54,7 @@
                 </div>
                 <?php } else { ?>
                 <div class="categories" >
-                    <a href='jobslist.php' class='categorie'>Your Jobs</a>
+                    <a href='jobslist.php' class='categorie'>My Jobs</a>
                 </div>
                 <?php } ?>
 
@@ -65,7 +65,7 @@
                 <?php } ?>
                         
                 <div class="categories" >
-                <a href='alljobslist.php' class='categorie'>All Jobs List</a>
+                <a href='alljobslist.php' class='categorie'>All Jobs</a>
                 </div>
                 <div class="categories" >
                 <a href='logout.php' class='categorie'>Logout</a>

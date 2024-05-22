@@ -15,7 +15,7 @@ include "head.php";
     if ($_SESSION["admin"] == 1) {
         echo htmlspecialchars("Jobs Administration");
     } else {
-        echo htmlspecialchars("Jobs you created");
+        echo htmlspecialchars("Jobs you Created");
     } ?></h2>
     <?php
     if ($_SESSION["admin"]) {
@@ -48,7 +48,7 @@ include "head.php";
                         echo "<ul>";
                     echo '</div>';
                     echo "<p>";
-                    echo $job->description;
+                    echo nl2br($job->description);
                     echo "</p>";
                     echo "<div class='card__btn-divider'>";
                     echo '<button class="btn">';
@@ -92,7 +92,7 @@ include "head.php";
                         echo "<ul>";
                     echo '</div>';
                     echo "<p>";
-                    echo $job->description;
+                    echo nl2br($job->description);
                     echo "</p>";
                     echo "<div class='card__btn-divider'>";
                     echo '<button class="btn">';

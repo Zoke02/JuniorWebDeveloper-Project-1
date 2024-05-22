@@ -11,6 +11,29 @@ include "head.php";
 ?>
 
 <main>
+    <div class="hero-box">
+        <h1>
+            Find your <br />
+            dreamjob!
+        </h1>
+        <div class="search-box">
+            <div class="search-box__field">
+                <img
+                    class="search-box__lens"
+                    src="icons/magnifying-glass-solid.svg"
+                    alt=""
+                />
+                <form>
+                    <input
+                        type="search"
+                        name="search"
+                        id="search"
+                        placeholder="Search"
+                    />
+                </form>
+            </div>
+        </div>
+    </div>
     </div>
         <h2 class="job-card__h2" >List of all Jobs</h2>
         <?php
@@ -44,11 +67,11 @@ include "head.php";
                     echo "<ul>";
                 echo '</div>';
                 echo "<p>";
-                echo $job->description;
+                echo nl2br($job->description);
                 echo "</p>";
                 echo "<div class='card__btn-divider'>";
                 echo '<button class="btn">';
-                echo "<a href='applyjob.php?id={$job->id}'>Contact</a>";
+                echo "Less info...";
                 echo "</button>";
                 echo "</div>";
             echo "</div>";

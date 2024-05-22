@@ -11,7 +11,7 @@ class Jobs {
     {
         $all_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM jobs WHERE status = 'Visible' ORDER BY created_on DESC");
+        $result = $db->query("SELECT * FROM jobs WHERE status = 'Visible' ORDER BY id DESC");
         while ($row = $result->fetch_assoc()) 
         {   
             $all_jobs[] = new Job($row);
@@ -24,7 +24,7 @@ class Jobs {
     {
         $all_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM jobs ORDER BY created_on DESC");
+        $result = $db->query("SELECT * FROM jobs ORDER BY id DESC");
         while ($row = $result->fetch_assoc()) 
         {   
             $all_jobs[] = new Job($row);
