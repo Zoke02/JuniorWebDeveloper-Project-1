@@ -38,7 +38,7 @@ delete_after_365_days();
         </div>
         <a class="btn" href="alljobslist.php">List of All Jobs</a>
     </div>
-        <h2 class="hot-title" >Last 10 added jobs!</h2>
+        <h2 class="hot-title" >Last 10 added or updated jobs!</h2>
         <?php
         $jobs = new Jobs;
         $all_jobs = $jobs->last_jobs_vissible();

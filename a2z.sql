@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2024 at 07:31 PM
+-- Generation Time: May 23, 2024 at 04:09 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -37,10 +37,32 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `categorie_name`) VALUES
-(1, 'Production'),
-(2, 'Law and Government'),
-(3, 'Office'),
-(4, 'Marketings');
+(1, 'Logistics, warehouse & international commerce'),
+(2, 'Accounting & auditing'),
+(3, 'Secretarial, clerical & administrative assistants'),
+(4, 'Marketing, advertising & PR'),
+(26, 'Medicine'),
+(27, 'Administration & middle manegemant'),
+(28, 'Agriculture & agribusiness'),
+(29, 'Beauty, fitness & sport'),
+(30, 'Design & creativity'),
+(31, 'Education & science'),
+(32, 'Finance & banking'),
+(33, 'Hotels, restaurants & tourism'),
+(34, 'Insuarance'),
+(35, 'IT,computers & Internet'),
+(36, 'HR & personnel management'),
+(37, 'Journalism, publishing & printing'),
+(38, 'Real estate'),
+(39, 'Retail'),
+(40, 'Sales & procurement'),
+(41, 'Security & guarding'),
+(42, 'Service sector'),
+(43, 'Skilled trades & manufacturing'),
+(44, 'Telecommunications'),
+(45, 'Transportation & auto industry'),
+(46, 'Upper & senior management'),
+(47, 'Seasonal work');
 
 -- --------------------------------------------------------
 
@@ -68,12 +90,21 @@ CREATE TABLE `jobs` (
 --
 
 INSERT INTO `jobs` (`id`, `user_id`, `job_title`, `qualification_id`, `description`, `categorie_id`, `place_of_work`, `hours`, `salary`, `created_on`, `modified_on`, `status`) VALUES
-(13, 1, 'Marketer', 1, 'When employers look for a new employee, they usually want to make sure that the person they hire is qualified for the specific requirements of the job. For this reason, you may often find that job listings include a list of qualifications they want the person they hire to have. You can also build your qualifications into your standard cover letter and resume so it\'s easiest for employers to determine your best qualities. In this article, we discuss types of qualifications, provide examples of qualifications and explain how to use experience instead of qualifications to apply for a job.', 3, 'Mondsee', '20', '1500€', '2024-04-20', '2024-04-20', 'Visible'),
-(17, 1, 'WebDev Junior', 1, 'Alin 123', 3, 'Mondsee', '40', '2600', '2024-05-20', '2024-05-20', 'Visible'),
-(18, 1, 'Marketer', 1, 'Alin 456', 3, 'Thalgau', '22', '1200', '2024-05-20', NULL, 'Visible'),
-(20, 1, 'WebDev Senior', 1, 'Zaaaa', 2, 'Mondsee', '20', '2500', '2024-05-21', '2024-05-21', 'Visible'),
-(21, 2, 'Kelner', 2, 'asdasd', 1, 'Thalgau', '20', '1500€', '2024-05-21', NULL, 'Visible'),
-(22, 1, 'Marketer', 1, 'asd', 2, 'Mondsee', '40', '2600', '2024-05-21', '2024-05-21', 'Hidden');
+(21, 2, 'Kelner', 1, 'asdasd', 1, 'Salzburg', '20', '1000€', '2024-05-21', '2024-05-22', 'Visible'),
+(22, 1, 'Marketer', 1, 'asd', 2, 'Mondsee', '40', '2600', '2024-05-21', '2024-05-21', 'Visible'),
+(24, 2, ' Verkaufsberater_in', 2, 'Die Österreichische Post ist der landesweit führende Logistik- und Postdienstleister. Zu den Hauptgeschäftsbereichen zählen die Beförderung von Briefen, Werbesendungen, Printmedien und Paketen. Das Filialnetz der Österreichischen Post zählt zu den größten Privatkundennetzen des Landes und bietet seinen Kunden in ganz Österreich hochwertige Produkte und Services in den Bereichen Post, Bank, Telekommunikation und Energie. Die Österreichische Post ist zudem durch Tochterunternehmen auch in elf europäischen Ländern in den Bereichen Paket & Logistik tätig.\r\n', 1, 'Mondsee', '20', '1045,00', '2024-05-22', '2024-05-22', 'Visible'),
+(25, 2, ' Pflegeassistent/in', 1, 'Aufgaben:\r\n- Aktive Beziehungsgestaltung\r\n- Professionelle und liebevolle Pflege und Betreuung von Menschen \r\n- Beobachtung und Dokumentation der durchgeführten Pflegemaßnahmen\r\n- Ihr Aufgabenbereich je nach Ausbildung richtet sich nach den gesetzlichen Bestimmungen (GUKG) und\r\n  der jeweiligen Gesundheitseinrichtung\r\n\r\nAnforderungen:\r\n- Registrierung im Gesundheitsberuferegister\r\n- Ausbildungs- und Qualifikationsnachweis (gemäß GUKG)\r\n- Aktueller Impfstatus\r\n- Führerschein B\r\n- Ausreichende Deutschkenntnisse (Niveau B2)\r\n\r\nIhre Vorteile bei R&S Medical:\r\n- Wertschätzende Betreuung und Unterstützung auf Ihrem Karriereweg\r\n- Sicherer Arbeitsplatz\r\n- Flexible Dienstzeiten (nach Möglichkeit)\r\n- Familienfreundlich\r\n- Voll- und Teilzeitbeschäftigung möglich\r\n- Vollversicherung und soziale Absicherung\r\n- Langfristige Anstellung\r\n- Auf Wunsch wechselnde Einsatzorte\r\n- Aus- und Weiterbildungsmöglichkeiten\r\n- Überdurchschnittliche Verdienstmöglichkeiten\r\n- Bei Bedarf Unterstützung bei einem notwendigen Nostrifikationsprozess\r\n\r\nGemeinsam besprechen wir Ihre Arbeitsvorstellungen, Arbeitsaufgaben und das tatsächliche Gehalt gerne bei einem persönlichen Gespräch!\r\n\r\nMit R&S haben Sie ein innovatives Unternehmen als Partner! R&S Medical ist ein modernes Unternehmen, welches die Veränderungen und Herausforderungen im Gesundheits- und Pflegebereich kennt und diese auch verändern will.\r\nWir begleiten Sie gerne auf Ihrem persönlichen Karriereweg im Pflegearbeitsbereich.', 1, 'Eugendorf', '40', '2600', '2024-05-22', '2024-05-22', 'Visible'),
+(26, 2, 'Tischler_in', 1, 'Dies sind Ihre Aufgaben:\r\n* Anfertigung von Möbelstücken und Inneneinrichtungen nach Maß und Zeichnung\r\n* Bedienung von Maschinen und handgeführten Werkzeugen zur Holzbearbeitung\r\n* Montage von Möbeln\r\n* Durchführung von Reparaturen und Restaurierungsarbeiten an bestehenden Möbeln\r\n* Einhaltung von Qualitätsstandards und Sicherheitsvorschriften\r\n\r\nDas bringen Sie mit:\r\n* Abgeschlossene Ausbildung als Tischler_in\r\n* Fundierte Kenntnisse und praktische Erfahrung im Möbel- und Innenausbau\r\n* Sicherer Umgang mit handgeführten Werkzeugen sowie Maschinen und Anlagen\r\n* Kreativität, Sorgfalt und präzises Arbeiten nach Zeichnung\r\n* Teamfähigkeit, Zuverlässigkeit und Flexibilität\r\n* Bereitschaft zur Schichtarbeit\r\n\r\nWir garantieren Ihnen:\r\n* Einen Brutto-Stundenlohn von EUR 17,00 zzgl. etwaiger anfallender Zulagen (Überzahlung je nach Qualifikation und Berufserfahrung vorgesehen)\r\n* Vielseitige und anspruchsvolle Aufgaben\r\n* Individuelle und persönliche Betreuung durch Ihr Team der expertum GmbH\r\n* Hochwertige und kostenlose Arbeitskleidung\r\n* Teilnahme an unserem Programm \"Mitarbeiter_innen werben Mitarbeiter_innen\"\r\n\r\nWir freuen uns auf Ihre Bewerbung!', 1, 'Salzburg', '38,5', '2600', '2024-05-22', NULL, 'Visible'),
+(27, 2, 'Sommerpostler_innen', 1, 'HOL DIR DEN BESTEN SOMMERJOB ÖSTERREICHS!\r\n\r\nGenieße deinen Sommer mit viel Abwechslung und noch mehr Zeit an der frischen Luft! Dein verantwortungsvoller und sicherer Job ist außerdem fair bezahlt und bietet dir genug Freizeit, um mehr aus deinem Sommer rauszuholen.\r\n\r\nGEHALT\r\n \r\n- Du erhältst ein Bruttomonatsgehalt von mindestens 1.300,- EUR inkl. Überstundenpauschale für 20 Arbeitstage (= 4 Wochen)\r\nzusätzliche Prämie (Nettozahlung) ab der 5.Woche (bis zu 2.825,- EUR bei 40 Arbeitstage = 8 Wochen Arbeitsdauer möglich)\r\n- Du warst schon als Sommerpostler_in bei uns aktiv? Dann gibt es eine Wiederkehrprämie von zusätzlich netto 140,- EUR on top!\r\n\r\nAUFGABEN\r\n \r\n- Du sortierst die Sendungen für dein Zustellgebiet\r\n- Du stellst Briefe, Pakete und Werbepost an unsere Kund_innen zu\r\n- Du übernimmst Verwaltungsarbeiten, wie das Abrechnen einkassierter Geldbeträge\r\n- Du unterstützt von Montag bis Freitag ab ca. 06:00 Uhr\r\n \r\n Qualifikation\r\n \r\n- Mindestalter 18 Jahre \r\n- verlässliche und selbstständige Arbeitsweise\r\n- Freude und Umgang mit Menschen\r\n- gute Deutschkenntnisse und Führerschein B von Vorteil\r\n ', 47, 'Mondsee', '40', '1300', '2024-05-22', '2024-05-22', 'Visible'),
+(28, 2, ' Produktionsmitarbeiter/in', 1, 'Ihre Aufgaben:\r\n+ Verantwortung für den sorgfältigen Betrieb der Anlage\r\n+ Maschinenbedienung\r\n+ Durchführen von Montage- und Verpackungstätigkeiten\r\n+ Durchführen von Prüfungen die zur Sicherstellung der Qualität erforderlich sind\r\n\r\nIhr Profil:\r\n+ Abgeschlossene Ausbildung im Metallbereich erwünscht \r\n+ Erfahrung in der Produktion oder Maschinenbedienung erwünscht \r\n+ Hohes Maß an Gründlichkeit und an Qualitätsverständnis \r\n+ Gutes Deutsch in Wort und Schrift wird vorausgesetzt\r\n+ Handwerkliches Geschick\r\n+ FS B sowie eigener PKW unbedingt erforderlich \r\n+ Schichtbereitschaft 2 - 3 Schicht  \r\n\r\nWir bieten:\r\n+ Bruttolohn: Ab € 16,42 pro Stunde + Zulagen \r\n+ Beschäftigung im Ausmaß von 38,50 Wochenstunden\r\n+ Betriebskantine\r\n+ Mitarbeiter/innenrabatte\r\n+ Abwechslungsreiche Tätigkeit an einem zukunftssicheren Arbeitsplatz in einem wirtschaftlich erfolgreichen und stabilen Unternehmen\r\n+ Tiefgaragenstellplatz am Firmengelände vorhanden\r\n+ Persönliche und individuelle Beratung durch unser Team\r\n+ LATURO ist immer darauf bedacht, seine Mitarbeiter/innen in allen Lebenslagen zu unterstützen und zu fördern\r\n\r\n\r\nWir freuen uns auf Ihre Bewerbung!\r\n\r\nLATURO Personalservice GmbH, Schrannengasse 4 5020 Salzburg\r\nTelefon +43 / 662 / 88 46 66\r\nEmail: office.sbg@laturo.at\r\n\r\nBitte nehmen Sie zu Ihrem Bewerbungsgespräch folgende Unterlagen mit:\r\n\r\n- aktueller Lebenslauf mit Foto sowie Zeugnisse\r\n- Unterlagen, die die Berechtigung zum Zugang am österreichischen Arbeitsmarkt bescheinigen bzw. \r\n  Personalausweis/Reisepass', 1, 'Fuschl am See', '40', '1600', '2024-05-22', NULL, 'Visible'),
+(29, 2, 'Pädagogische Assistenzkräfte für die Nachmittagsbetreuung (m/w/d)', 2, 'Ihre Aufgaben:\r\n\r\n- Gewissenhafte Führung, Erziehung, Bildung und Betreuung der anvertrauten Kinder\r\n- Eigenständige Gestaltung und Durchführung der Bildungsarbeit inkl. Dokumentation\r\n- Allgemeine Organisation und Planung der Nachmittagsbetreuung \r\n- Zusammenarbeit und Kooperation mit dem Rechtsträger, der Gemeinde, den \r\nMitarbeiterInnen sowie den Eltern\r\n\r\nIhr Profil:\r\n\r\n- Abgeschlossene Ausbildung zur päd. Assistenzkraft oder Studenten/innen für Lehramt bzw. \r\nFreizeitpädagogin/en oder ähnliche pädagogische Ausbildung bzw. Bereitschaft die \r\nAusbildung zur päd. Assistenzkraft zu absolvieren\r\n- Einfühlungsvermögen und Geduld im Umgang mit Kindern\r\n- Organisationstalent und gewöhnliche PC-Kenntnisse\r\n- Flexibilität und Belastbarkeit\r\n- Kommunikations- und Teamfähigkeit\r\n\r\nWir bieten:\r\n\r\n- Mitarbeit in einer dynamischen Non-Profit Organisation mit sozialer Verantwortung\r\n- Hohe Familienfreundlichkeit\r\n- Das Mindestentgelt beträgt lt. geltendem MLT für päd. Assistenzkräfte je nach \r\nBerufserfahrung und Anrechnung der Vordienstzeiten mind. 2.049 € brutto sowie einen \r\nGehaltszuschlag von 164 € brutto pro Monat als päd. Assistenzkraft\r\n- 10 zusätzliche Urlaubstage pro Jahr (bei einer 5-Tage-Woche), freie Tage analog zu \r\nSchulferien, befristet bis Schulende oder mit Durchrechnung möglich\r\n- Arbeitszeit: 4 Nachmittage von 12:30-16:00 Uhr', 31, 'Linz', '18', '900', '2024-05-22', '2024-05-22', 'Visible'),
+(30, 1, 'BACKBOX & Regalbetreuer_in', 1, 'Aufgaben, die mich erwarten \r\n\r\n* Backen und Bereitstellen der Backware\r\n* Organisieren und Bewirtschaften der Regale \r\n* Präsentieren von Obst und Gemüse\r\n* Beantworten von Kund_innenanfragen\r\n* Durchführen von Qualitätskontrollen\r\n* Reinigen der Filiale\r\n\r\nQualifikationen, die ich mitbringe \r\n\r\n* Begeisterung für den Handel\r\n* zuverlässige und selbständige Arbeitsweise\r\n* Bereitschaft im Team anzupacken\r\n\r\nAngebote, die mich überzeugen\r\n\r\n* attraktive Teilzeitoptionen, auch als Student_innenjob geeignet\r\n* vielseitiges Tätigkeitsfeld\r\n* umfangreiche Einarbeitung\r\n* top ausgestattet mit Headset und immer verbunden mit dem Team\r\n* zielgerichtete E-Learning Module zur fachlichen Weiterbildung\r\n* kostenlose Verpflegung in Form von täglich frischem Obst und Gemüse, Kaffee sowie Tee\r\n* sicherer und verlässlicher Arbeitgeber mit österreichweitem Filialnetz\r\n* DU-Kultur im ganzen Unternehmen\r\n* vergünstigte Tarife bei Krankenzusatzversicherungen\r\n* Leasingprogramm für Fahrräder und E-Bikes\r\n\r\nEntgelt\r\nattraktives Brutto-Monatseinstiegsgehalt ab € 950,- für 15 Stunden/Woche, € 1.140,- für 18 Stunden/Woche und € 1.330,- für 21 Stunden/Woche, auf Vollzeitbasis entspricht dies € 2.439,- für 38,5 Stunden/Woche (bis € 2.630,- auf Vollzeitbasis in der Endstufe)', 3, 'Mondsee', '15', 'ab € 950', '2024-05-22', NULL, 'Visible'),
+(31, 1, 'Produktionsmitarbeiter/in', 2, 'JAHRESSTELLE\r\n\r\nAnforderung:\r\n* Interesse an Arbeit überwiegend im Freien\r\n* Flexible Arbeitszeit während der Hauptsaison\r\n* Ehrlichkeit und Gewissenhaftigkeit\r\n* Kundenfreundlichkeit\r\n* entsprechende Deutschkenntnisse (Kundenkontakt)\r\n\r\nWir bieten:\r\n* Vollzeitbeschäftigung - oder Teilzeit ab 20 Wochenstunden\r\n* Jahresstelle\r\n* Familiäres Betriebsklima an einem der schönsten Badeseen in Österreich\r\n* Bademöglichkeit direkt am Arbeitsplatz\r\n* Mitarbeiter/Innen - Vergünstigungen im Bootsverleih und in der Schifffahrt', 1, 'Eugendorf', '21', '1800', '2024-05-22', '2024-05-22', 'Visible'),
+(32, 1, 'Reinigungskräfte (m/w/d)', 1, 'ANFORDERUNGSPROFIL:\r\n\r\n  Qualifikation/Praxis\r\n\r\n- Praxis wäre von Vorteil\r\n- Führerschein B erwünscht\r\n\r\n  Aufgabengebiet:\r\n\r\n- Büroreinigung\r\n\r\n  Arbeitszeit/Ausmaß/Dauer\r\n\r\n- Voll- oder Teilzeitbeschäftigung ab 20 Wochenstunden möglich\r\n- Arbeitszeit ab 14:00 Uhr\r\n\r\n\r\n\r\nArbeitsort: Mondsee und Thalgau und in Salzburg', 42, 'Salzburg', '40', '1700', '2024-05-22', NULL, 'Visible'),
+(33, 2, 'Bilanzbuchhalter:in (m/w/d)', 1, 'Innovationen voranbringen - Ihr Aufgabengebiet:\r\n\r\n* Erstellen von Monats- und Jahresabschlüssen nach UGB\r\n* Durchführen der monatlichen UVA (AT-CH-D) und ZM\r\n* Laufende Abstimmung der Konten\r\n* Ansprechpartner für Steuerberater und Behörden\r\n* Führen der Anlagenbuchhaltung\r\n\r\nAls Familienunternehmen denken wir langfristig - Sie auch? Wir bieten:\r\n\r\n* Wir bieten einen sicheren Arbeitsplatz und ein gutes Arbeitsklima in einem\r\n  namhaften und international tätigen Familienunternehmen\r\n* Flexible Arbeitszeiten und ein modernes Arbeitsumfeld\r\n* Weiterbildungsmöglichkeiten im Tätigkeitsbereich sowie ein umfangreiches\r\n  Schulungsangebot über die Hörmann-Akademie\r\n* Gesundheitsmaßnahmen und diverse Sozialleistungen wie Essenszulage, regionales\r\n  und saisonales Bio Obst/Gemüse zur freien Entnahme, gratis Kaffee und Tee,\r\n  Leasingbike, firmeneigener Hörmann Kraftstoffzuschuss\r\n* Als Einstiegsgehalt ist ein kollektivvertragliches Bruttomonatsgehalt von € 2.950,-\r\n  auf Vollzeitbasis vorgesehen.\r\n  Eine leistungsbezogene Überzahlung ist möglich', 32, 'Mondsee', '40', 'von € 2.950', '2024-05-23', NULL, 'Visible'),
+(34, 2, 'Kelner', 4, 'asdasd', 33, 'Salzburg', '20', '1000€', '2024-05-23', NULL, 'Visible'),
+(35, 1, 'Bilanzbuchhalter:in (m/w/d)', 1, 'Innovationen voranbringen - Ihr Aufgabengebiet:\r\n\r\n* Erstellen von Monats- und Jahresabschlüssen nach UGB\r\n* Durchführen der monatlichen UVA (AT-CH-D) und ZM\r\n* Laufende Abstimmung der Konten\r\n* Ansprechpartner für Steuerberater und Behörden\r\n* Führen der Anlagenbuchhaltung\r\n\r\nAls Familienunternehmen denken wir langfristig - Sie auch? Wir bieten:\r\n\r\n* Wir bieten einen sicheren Arbeitsplatz und ein gutes Arbeitsklima in einem\r\n  namhaften und international tätigen Familienunternehmen\r\n* Flexible Arbeitszeiten und ein modernes Arbeitsumfeld\r\n* Weiterbildungsmöglichkeiten im Tätigkeitsbereich sowie ein umfangreiches\r\n  Schulungsangebot über die Hörmann-Akademie\r\n* Gesundheitsmaßnahmen und diverse Sozialleistungen wie Essenszulage, regionales\r\n  und saisonales Bio Obst/Gemüse zur freien Entnahme, gratis Kaffee und Tee,\r\n  Leasingbike, firmeneigener Hörmann Kraftstoffzuschuss\r\n* Als Einstiegsgehalt ist ein kollektivvertragliches Bruttomonatsgehalt von € 2.950,-\r\n  auf Vollzeitbasis vorgesehen.\r\n  Eine leistungsbezogene Überzahlung ist möglich', 32, 'Mondsee', '40', 'von € 2.950', '2024-05-23', NULL, 'Visible'),
+(36, 1, ' Busfahrer (m/w/d)', 1, 'für Reiseverkehr in Europa und auch Schülertransporte in der Umgebung.\r\n(Busse der Marke Setra und Mercedes von 20 bis 58 Sitzer sind vorhanden)\r\n\r\nAnforderungen:\r\n\r\n* Führerschein D und E sowie entsprechende Praxis\r\n* entsprechende Deutschkenntnisse für die Kommunikation mit Fahrgästen.\r\n\r\nEntlohnung: \r\n\r\n- Euro 2591,-- brutto - Überzahlung je nach Qualifikation und Praxis. \r\n\r\n\r\nWir bieten:\r\n\r\n- ein abwechslungsreiches Aufgabengebiet\r\n- ein familäres Arbeitsklima\r\n\r\n \r\nHaben wir Ihr Interesse für diese Stelle geweckt?\r\n', 1, 'Linz', '40', ' 2591', '2024-05-23', NULL, 'Visible');
 
 -- --------------------------------------------------------
 
@@ -177,13 +208,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `job_categories`
