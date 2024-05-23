@@ -4,11 +4,11 @@ include "head.php";
 ?>
 
 <main>
-    <form name="contact" class="job-card" action="" method="post">
+    <form id="contact" name="contact" class="job-card" action="" method="post">
         <h2 class="job-card__h2">Contact</h2>
-        <h3 class="">For any complains contact us, we would also love to hear your opinion on our WebSite.</h3>
-        <div class="">
-            <p>Our Information:</p>
+        <h3 class="job-card__h2 text-center">For any complains contact us, we would also love to hear your opinion on our WebSite.</h3>
+        <div class="contact__paragraphs">
+            <p>Our Information</p>
             <p>Adress: Irlachstraße 76 / 2</p>
             <p>Phone: +43 033 2342 234</p>
         </div>
@@ -37,7 +37,7 @@ include "head.php";
                     rows="25"
                     cols="50"
                     placeholder="Your message here..."
-            
+
                 ><?php
                     if (!empty($_POST["message"])) {
                         echo htmlspecialchars($_POST["message"]);
@@ -45,14 +45,13 @@ include "head.php";
                 ?></textarea>
 
                 <div class="job_card__btn">
-                    <button type="submit" class="btn" id="submit-contact" name="submit-contact" onclick="return validateContactForm() ">Send Message</button>
+                    <button class="btn" id="submit-contact" name="submit-contact" onclick="return validateContactForm() ">Send Message</button>
                 </div>
             </form>
 
         </div>
         </form>
 </main>
-
 <?php
 include "footer.php"
 ?>

@@ -66,8 +66,8 @@ else {
         <div class="job-card__form">
             <label class="job-card__label" for="categorie">Categorie Name:</label>
         </div>
-        <input class="job-card__input" type="text" name="categorie" id="categorie" value="<?php 
-            if (!empty($_POST["categorie"])) 
+        <input class="job-card__input" type="text" name="categorie" id="categorie" value="<?php
+            if (!empty($_POST["categorie"]))
             {
                 echo htmlspecialchars($_POST["categorie"]);
             } ?>">
@@ -101,8 +101,8 @@ else {
         ?>
     </div>
 </main>
-
 <?php
 }
 include "footer.php"
 ?>
+

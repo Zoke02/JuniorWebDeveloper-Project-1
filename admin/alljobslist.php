@@ -10,6 +10,7 @@ include "head.php";
 
 ?>
 
+
 <main>
     <div class="hero-box">
         <h1>
@@ -81,7 +82,8 @@ include "head.php";
     </div>
 </main>
 
-
 <?php
 include "footer.php"
 ?>
+
+

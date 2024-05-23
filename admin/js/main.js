@@ -62,5 +62,58 @@ function validateContactForm() {
             alert('Please write us a message.');
         }
         return false;
+    } else {
+        alert('Thank you for your submission.');
+        document.getElementById('contact').reset();
+        return true;
     }
 }
+
+// Cookies and welcome message
+
+function setCookie(cookieName, cookieValue, exDays) {
+    // First get actual date.
+    const date = new Date();
+    // Cookie Name
+    cookieName = 'newsEmail';
+    // .setTime adds the ammount of time.
+    date.setTime(date.getTime() + exDays * 24 * 60 * 60 * 1000);
+    let expires = 'expires=' + date.toUTCString();
+    document.cookie =
+        cookieName + '=' + cookieValue + ';' + expires + ';path=/';
+}
+
+function getCookie(cookieName) {
+    let name = cookieName + '=';
+    let splitCookie = document.cookie.split(';');
+    for (let i = 0; i < splitCookie.length; i++) {
+        let c = splitCookie[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return '';
+}
+
+function checkCookies() {
+    let isCookieSet = getCookie('newsEmail');
+    if (!isCookieSet) {
+        rejected = 'rejected';
+        user = prompt(
+            'Welcome. You can enter your E-Mail Adress for our newsletter!',
+            ''
+        );
+        if (user != '' && user != null) {
+            setCookie('newsEmail', user, 30);
+        } else {
+            setCookie('newsEmail', rejected, 30);
+        }
+    }
+}
+
+window.onload = function () {
+    checkCookies();
+};

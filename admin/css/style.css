@@ -41,6 +41,11 @@ a {
 /* h3 = 3.1 */
 /* h4 = 2 */
 /* h5 = 1.77 */
+
+.text-center {
+    text-align: center;
+}
+
 h2 {
     text-align: center;
     font-size: 3.1rem;
@@ -549,6 +554,18 @@ input:focus {
 
 .job_card__btn {
     padding: 3rem 0 0;
+}
+
+/* Contact */
+
+.contact__paragraphs {
+    text-align: start;
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 2rem;
+}
+.contact__paragraphs p:first-child {
+    font-weight: bold;
 }
 
 /* Footer */
