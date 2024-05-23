@@ -52,8 +52,6 @@ use WIFI\JWE23\DataBanking\Model\Categories;
                 </div>
                 
             </div>
-
-            <!-- I get a error called Header cant accept Location -->
             <div class="menu-categories hide">
                 <?php
                 $categories = new Categories;

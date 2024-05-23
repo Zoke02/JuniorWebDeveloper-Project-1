@@ -27,19 +27,18 @@ delete_after_365_days();
                     src="icons/magnifying-glass-solid.svg"
                     alt=""
                 />
-                <div>
-                    <input
-                        type="search"
-                        name="search"
-                        id="search"
-                        placeholder="Search"
-                    />
-                </div>
+                <input
+                    type="search"
+                    name="search"
+                    id="search"
+                    onkeyup="search()"
+                    placeholder="Search"
+                />
             </div>
         </div>
         <a class="btn" href="alljobslist.php">List of All Jobs</a>
     </div>
-        <h2 class="hot-title" >Last 3 added jobs!</h2>
+        <h2 class="hot-title" >Last 10 added jobs!</h2>
         <?php
         $jobs = new Jobs;
         $all_jobs = $jobs->last_jobs_vissible();

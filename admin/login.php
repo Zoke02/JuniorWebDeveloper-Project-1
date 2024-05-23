@@ -21,10 +21,7 @@ if (!empty($_POST))
         $sql_password = $db->escape($_POST["password"]);
         $result = $db->query("SELECT * FROM user WHERE email = '{$sql_email}'");
         $user = $result->fetch_assoc();
-        // echo "<pre>";
-        // print_r($user);
-        // echo "</pre>";
-        // if (empty($user) || !password_verify($_POST["password"], $user["password"]))
+
         if (empty($user) || !password_verify($sql_password, $user["password"]))
         {
             $validate->error_entry("E-Mail or Password is FALSE.");

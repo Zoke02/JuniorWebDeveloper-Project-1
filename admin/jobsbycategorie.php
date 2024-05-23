@@ -23,16 +23,16 @@ include "head.php";
                     src="icons/magnifying-glass-solid.svg"
                     alt=""
                 />
-                <form>
-                    <input
-                        type="search"
-                        name="search"
-                        id="search"
-                        placeholder="Search"
-                    />
-                </form>
+                <input
+                    type="search"
+                    name="search"
+                    id="search"
+                    onkeyup="search()"
+                    placeholder="Search"
+                />
             </div>
         </div>
+        <a class="btn" href="alljobslist.php">List of All Jobs</a>
     </div>
     </div>
         <?php

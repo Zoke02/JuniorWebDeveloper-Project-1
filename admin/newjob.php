@@ -80,29 +80,29 @@ if (!empty($_POST))  {
     } else {
     ?>
 <main>
-    <h2 class="job-card__h2"><?php 
-    if (!empty($_GET["id"])) echo "Update Job";
-    if (empty($_GET["id"])) echo "Create new Job";
-    ?></h2>
-    <h3 class="job-card__h3">
-    <?php
-        if (!empty($validate)) {
-        echo $validate->error_html();
-        }
-    ?>
-    </h3>
-    
-    <?php
-    if (!empty($_GET["id"]))
-    {
-        $job = new Job($_GET["id"]);
-    }
-    ?>
 
     <form class="job-card" action="newjob.php<?php
         if (!empty($job)) {
             echo "?id=" . $job->id;
         } ?>" method="post">
+        <h2 class="job-card__h2"><?php 
+        if (!empty($_GET["id"])) echo "Update Job";
+        if (empty($_GET["id"])) echo "Create new Job";
+        ?></h2>
+        <h3 class="job-card__h3">
+        <?php
+            if (!empty($validate)) {
+            echo $validate->error_html();
+            }
+        ?>
+        </h3>
+        
+        <?php
+        if (!empty($_GET["id"]))
+        {
+            $job = new Job($_GET["id"]);
+        }
+        ?>
         <div class="job-card__form">
             <div class="job-card__checkbox">
                 <label class="job-card__label" for="status">Visible</label>

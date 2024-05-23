@@ -63,7 +63,7 @@ class Jobs {
     {
         $last_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM jobs WHERE status = 'Visible' ORDER BY id DESC LIMIT 3");
+        $result = $db->query("SELECT * FROM jobs WHERE status = 'Visible' ORDER BY id DESC LIMIT 10");
         while ($row = $result->fetch_assoc()) 
         {   
             $last_jobs[] = new Job($row);
