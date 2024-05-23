@@ -36,7 +36,7 @@ include "head.php";
     </div>
     </div>
         <h2 class="job-card__h2" >List of all Jobs</h2>
-        <div class="box">
+        <div class="cards-box">
             <?php
             $jobs = new Jobs;
             $all_jobs = $jobs->all_jobs();
@@ -66,12 +66,12 @@ include "head.php";
                         }
                         echo "<ul>";
                     echo '</div>';
-                    echo "<p>";
+                    echo "<p class='hide'>";
                     echo nl2br($job->description);
                     echo "</p>";
                     echo "<div class='card__btn-divider'>";
                     echo '<button class="btn">';
-                    echo "Less info...";
+                    echo "More info...";
                     echo "</button>";
                     echo "</div>";
                 echo "</div>";

@@ -8,6 +8,7 @@ include "head.php";
 
 
 <main>
+    <h2 class="myaccount-title">Your Profile</h2>
     <div class="myaccount">
         <img class="myaccount__image" src="icons/user-tie-solid.svg" alt="">
         <div class="myaccount__block">

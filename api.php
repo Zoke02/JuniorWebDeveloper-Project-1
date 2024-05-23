@@ -20,7 +20,6 @@ function fehler($message){
 
 //  GET-Parameter aus request uri 
 $request_uri_ohne_get = explode("?", $_SERVER["REQUEST_URI"])[0];
-
 $teile = explode("/api/", $request_uri_ohne_get , 2);
 $parameter = explode("/", $teile[1]);
 
@@ -46,13 +45,9 @@ $parameter = array_values($parameter);
 if (empty($parameter)) {
     fehler("After you selected a version next write what results you want from DataBase.");
 }
-// echo "gut";
 
 // print_r($_SERVER);
 
-//--bis hier eigentlich Grundlagen für alle APIs
-//--
-//--ab hier Spezifizierung je nach Anwendzngsbedarf
 
 if ($api_version == "jobs") {
     
