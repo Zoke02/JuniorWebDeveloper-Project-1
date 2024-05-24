@@ -11,7 +11,7 @@ include "head.php";
 ?>
 
 <main>
-    <div class="hero-box">
+    <div class="hero-box border-bottom">
         <h1>
             Find your <br />
             dreamjob!
@@ -34,8 +34,8 @@ include "head.php";
         </div>
         <a class="btn" href="alljobslist.php">List of All Jobs</a>
     </div>
-    </div>
-        <h2 class="job-card__h2" >Jobs in Categorie:</h2>;
+    <div class="main-wrapper">
+        <h2 class="job-card__h2" >Jobs in Categorie:</h2>
         <div class="cards-box">
             <?php
             if (!empty($_GET["id"])) {

@@ -75,8 +75,8 @@ else {
                 <button class="btn" type="submit">Create</button>
             </div>
         </form>
-        <h2 class="job-card__h2" >List of all Categories</h2>
-        <div class="job-categories-box">
+        <h2 class="job-card__h2 border-top" >List of all Categories</h2>
+        <div class="job-categories-box main-wrapper">
             <?php
             $categories = new Categories;
             $all_categories = $categories->all_categories();

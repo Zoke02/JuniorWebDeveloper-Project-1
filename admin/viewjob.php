@@ -21,7 +21,7 @@ if (!empty($_GET["id"])) {
 
 <main>
     <h2 class="job-card__h2" >All Information</h2>
-    <div class="cards-box">
+    <div class="view-job main-wrapper">
         <?php
         $jobs = new Jobs;
         $all_jobs = $jobs->get_job_by_id($_GET["id"]);

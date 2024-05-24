@@ -12,7 +12,7 @@ include "head.php";
 
 
 <main>
-    <div class="hero-box">
+    <div class="hero-box border-bottom">
         <h1>
             Find your <br />
             dreamjob!
@@ -36,7 +36,7 @@ include "head.php";
     </div>
     </div>
         <h2 class="job-card__h2" >List of all Jobs</h2>
-        <div class="cards-box">
+        <div class="cards-box main-wrapper">
             <?php
             $jobs = new Jobs;
             $all_jobs = $jobs->all_jobs();

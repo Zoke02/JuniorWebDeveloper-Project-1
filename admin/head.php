@@ -13,8 +13,8 @@ use WIFI\JWE23\DataBanking\Model\Categories;
         <script defer src="js/main.js"></script>
     </head>
     <body>
-        <header>
-            <div class="nav-bar">
+        <header class="border-bottom">
+            <div class="nav-bar main-wrapper">
                 <div class="nav-bar-box">
                     <img
                     id="categories-toogle";
