@@ -37,7 +37,7 @@ function search() {
 
 $(document).ready(function () {
     var time = new Date().getTime();
-    $(document.body).bind('mousemove keypress mouseleave', function () {
+    $(document.body).bind('mousemove keypress', function () {
         time = new Date().getTime();
     });
 

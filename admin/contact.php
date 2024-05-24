@@ -4,16 +4,16 @@ include "head.php";
 ?>
 
 <main>
-    <form id="contact" name="contact" class="job-card" action="" method="post">
+    <div class="job-card contact-box">
         <h2 class="job-card__h2">Contact</h2>
-        <h3 class="job-card__h2 text-center">For any complains contact us, we would also love to hear your opinion on our WebSite.</h3>
-        <div class="contact__paragraphs">
-            <p>Our Information</p>
-            <p>Adress: Irlachstraße 76 / 2</p>
-            <p>Phone: +43 033 2342 234</p>
-        </div>
-
-            <form name="contact_form" action="contact.php" class="job-card__form" onsubmit="return validateForm()" method="post">
+        <h3 class="job-card__h2 text-center">For any complains contact us.<br>We would also love to hear your opinion on our WebSite and what can we improve on it <span class="heart">&#10084;</span></h3>
+        
+            <form id="contact"name="contact" action="contact.php" class="job-card__form" method="post">
+                <div class="contact__paragraphs">
+                    <p>Our Information</p>
+                    <p>Adress: Irlachstraße 76 / 2</p>
+                    <p>Phone: +43 033 2342 234</p>
+                </div>
 
                 <label class="job-card__label" for="email">Your E-Mail:</label>
                 <input
@@ -49,8 +49,8 @@ include "head.php";
                 </div>
             </form>
 
-        </div>
-        </form>
+
+    </div>
 </main>
 <?php
 include "footer.php"

@@ -38,7 +38,7 @@ delete_after_365_days();
         </div>
         <a class="btn" href="alljobslist.php">List of All Jobs</a>
     </div>
-        <h2 class="hot-title" >Last 10 added or updated jobs!</h2>
+        <h2 class="hot-title" >Last 10 created jobs!</h2>
 
             <div class="cards-box">
 
@@ -49,6 +49,8 @@ delete_after_365_days();
             foreach ($all_jobs as $job) {
                 $created_on = $job->created_on;
                 $display_date = date("d-m-Y", strtotime($created_on));
+                $modified_on = $job->modified_on;
+                $display_modified = date("d-m-Y", strtotime($modified_on));
                 echo '<div class="cards">';
                     echo '<div class="card">';
                         echo '<h2 class="card__title">';
@@ -62,6 +64,11 @@ delete_after_365_days();
                             echo "<li>" . "Hours: " . $job->hours . "</li>";
                             echo "<li>" . "Sarary: " . $job->salary . "</li>";
                             echo "<li>" . "Created: " .  $display_date . "</li>";
+                            if ($job->modified_on) {
+                                echo "<li>" . "Last Updated: " .  $modified_on . "</li>";
+                            } else {
+                                echo "<li>" . "Last Updated: Never" . "</li>";
+                            }
                             echo "<ul>";
                         echo '</div>';
                         echo "<p class='hide'>";

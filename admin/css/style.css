@@ -86,11 +86,9 @@ h3 ul li::marker {
 }
 
 /* Universals */
-.pad-bot2 {
-    padding-bottom: 2rem;
-}
-.pad-top2 {
-    padding-top: 2rem;
+
+.heart {
+    color: red;
 }
 
 /* TOP-Navication Bar */
@@ -182,6 +180,49 @@ header a {
     border-bottom: 3px solid var(--emerald);
 }
 
+@media screen and (min-width: 800px) {
+    .header {
+        position: relative;
+        display: inline-block;
+    }
+    .menu-categories {
+        position: absolute;
+        max-height: 100dvh;
+        overflow-y: scroll;
+        width: 50%;
+        background-color: var(--azure);
+        z-index: 1;
+        border-right: 3px solid var(--emerald);
+        border-bottom: 3px solid var(--emerald);
+    }
+    .categories {
+        width: 100%;
+        padding: 1rem 2rem;
+        display: block;
+        height: 6rem;
+        border-bottom: 3px solid var(--emerald);
+    }
+    .categorie {
+        width: 100%;
+        border: none;
+    }
+    .categories:last-child {
+        border: none;
+    }
+
+    .menu {
+        position: absolute;
+        max-height: 100dvh;
+        right: 0;
+        overflow-y: scroll;
+        width: 50%;
+        background-color: var(--azure);
+        z-index: 1;
+        border-left: 3px solid var(--emerald);
+        border-bottom: 3px solid var(--emerald);
+    }
+}
+
 /* Hero Section */
 
 .hero-box {
@@ -242,7 +283,7 @@ header a {
 
 main {
     background: var(--azure);
-    min-height: 40dvh;
+    min-height: max-content;
 }
 /* Buttons */
 
@@ -494,6 +535,15 @@ input:focus {
     padding-top: 0.3rem;
 }
 
+@media screen and (min-width: 800px) {
+    .about-us {
+        flex-direction: row;
+        max-width: 720px;
+        gap: 4rem;
+        padding: 4rem 2rem;
+    }
+}
+
 /* Data and Cookies */
 
 .data-and-cookies {
@@ -508,6 +558,16 @@ input:focus {
 }
 .data-and-cookies p {
     font-size: 1.4rem;
+}
+
+@media screen and (min-width: 800px) {
+    .data-and-cookies {
+        display: grid;
+        gap: 1.6rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+        padding: 4rem 6rem;
+    }
 }
 
 /* JOB CARD */
@@ -577,6 +637,7 @@ input:focus {
     border: none;
     font-size: 2rem;
     width: 100%;
+    overflow: scroll;
 }
 
 .job-card__select:focus {
@@ -606,6 +667,11 @@ input:focus {
     padding: 3rem 0 0;
 }
 
+.job-categories .job-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 @media screen and (min-width: 800px) {
     .card {
         height: 100%;
@@ -629,6 +695,22 @@ input:focus {
     .cards:last-of-type {
         padding: 1rem 2rem;
     }
+
+    .job-card__form {
+        max-width: 600px;
+    }
+
+    .job-categories-box {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+        padding: 2rem 2rem 4rem;
+    }
+
+    .job-categories-box .cards {
+        padding: 0;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -647,10 +729,19 @@ input:focus {
     text-align: start;
     width: 100%;
     font-size: 1.6rem;
-    padding: 2rem;
+    padding: 2rem 0;
 }
 .contact__paragraphs p:first-child {
     font-weight: bold;
+}
+
+#contact .job_card__btn {
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Footer */

@@ -60,45 +60,47 @@ echo "</main>";
 else { 
 ?>
 <main>
-    </div>
+    <div class="job-categories">
         <h2 class="job-card__h2" >Create Categorie</h2>
         <form class="job-card" action="categorieslist.php" method="post">
-        <div class="job-card__form">
-            <label class="job-card__label" for="categorie">Categorie Name:</label>
-        </div>
-        <input class="job-card__input" type="text" name="categorie" id="categorie" value="<?php
-            if (!empty($_POST["categorie"]))
-            {
-                echo htmlspecialchars($_POST["categorie"]);
-            } ?>">
+            <div class="job-card__form">
+                <label class="job-card__label" for="categorie">Categorie Name:</label>
+                <input class="job-card__input" type="text" name="categorie" id="categorie" value="<?php
+                if (!empty($_POST["categorie"]))
+                {
+                    echo htmlspecialchars($_POST["categorie"]);
+                } ?>">
+            </div>
             <div class="job_card__btn">
                 <button class="btn" type="submit">Create</button>
             </div>
         </form>
         <h2 class="job-card__h2" >List of all Categories</h2>
-        <?php
-        $categories = new Categories;
-        $all_categories = $categories->all_categories();
+        <div class="job-categories-box">
+            <?php
+            $categories = new Categories;
+            $all_categories = $categories->all_categories();
 
-        foreach ($all_categories as $categorie)
-        {
-        echo '<div class="cards">';
-            echo '<div class="card">';
-                echo '<h2 class="card__title">';
-                    echo $categorie->categorie_name;
-                echo '</h2>';
-                echo "<div class='card__btn-divider'>";
-                    echo '<button class="btn">';
-                        echo "<a href='updatelist.php?id={$categorie->id}'>Update</a>";
-                    echo "</button>";
-                    echo '<button class="btn">';
-                        echo "<a href='deletecategorie.php?id={$categorie->id}'>Delete</a>";
-                    echo "</button>";
+            foreach ($all_categories as $categorie)
+            {
+            echo '<div class="cards">';
+                echo '<div class="card">';
+                    echo '<h2 class="card__title">';
+                        echo $categorie->categorie_name;
+                    echo '</h2>';
+                    echo "<div class='card__btn-divider'>";
+                        echo '<button class="btn">';
+                            echo "<a href='updatelist.php?id={$categorie->id}'>Update</a>";
+                        echo "</button>";
+                        echo '<button class="btn">';
+                            echo "<a href='deletecategorie.php?id={$categorie->id}'>Delete</a>";
+                        echo "</button>";
+                    echo "</div>";
                 echo "</div>";
             echo "</div>";
-        echo "</div>";
-        }
-        ?>
+            }
+            ?>
+        </div>
     </div>
 </main>
 <?php

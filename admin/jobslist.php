@@ -53,7 +53,8 @@ include "head.php";
             foreach ($all_jobs as $job) {
                 $created_on = $job->created_on;
                 $display_date = date("d-m-Y", strtotime($created_on));
-
+                $modified_on = $job->modified_on;
+                $display_modified = date("d-m-Y", strtotime($modified_on));
                 echo '<div class="cards">';
                     echo '<div class="card">';
                         echo '<h2 class="card__title">';
@@ -67,12 +68,14 @@ include "head.php";
                                 echo "<li>" . "Hours: " . $job->hours . "</li>";
                                 echo "<li>" . "Sarary: " . $job->salary . "</li>";
                                 echo "<li>" . "Created: " .  $display_date . "</li>";
+                                if ($job->modified_on) {
+                                    echo "<li>" . "Last Updated: " .  $modified_on . "</li>";
+                                } else {
+                                    echo "<li>" . "Last Updated: Never" . "</li>";
+                                }
                                 echo "<li>" . "Status: " .  $job->status . "</li>";
                             echo "<ul>";
                         echo '</div>';
-                        // echo "<p>";
-                        // echo nl2br($job->description);
-                        // echo "</p>";
                         echo "<div class='card__btn-divider'>";
                         echo '<button class="btn">';
                         echo "<a href='newjob.php?id={$job->id}'>Modify Job</a>";
@@ -109,9 +112,6 @@ include "head.php";
                                 echo "<li>" . "Status: " .  $job->status . "</li>";
                             echo "<ul>";
                         echo '</div>';
-                        // echo "<p>";
-                        // echo nl2br($job->description);
-                        // echo "</p>";
                         echo "<div class='card__btn-divider'>";
                         echo '<button class="btn">';
                         echo "<a href='newjob.php?id={$job->id}'>Modify Job</a>";

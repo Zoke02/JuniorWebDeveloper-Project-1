@@ -43,7 +43,6 @@ if (!empty($_POST))  {
                 "modified_on" => date("Y-m-d")
             ));
         }
-
         if (empty($_GET["id"])) 
         {
             $job = new Job(array(
@@ -81,6 +80,12 @@ if (!empty($_POST))  {
     ?>
 <main>
 
+    <?php
+    if (!empty($_GET["id"]))
+    {
+        $job = new Job($_GET["id"]);
+    }
+    ?>
     <form class="job-card" action="newjob.php<?php
         if (!empty($job)) {
             echo "?id=" . $job->id;
@@ -96,13 +101,6 @@ if (!empty($_POST))  {
             }
         ?>
         </h3>
-        
-        <?php
-        if (!empty($_GET["id"]))
-        {
-            $job = new Job($_GET["id"]);
-        }
-        ?>
         <div class="job-card__form">
             <div class="job-card__checkbox">
                 <label class="job-card__label" for="status">Visible</label>
@@ -136,8 +134,8 @@ if (!empty($_POST))  {
 
             <label class="job-card__label" for="categorie">Categorie:</label>
             <select class="job-card__select" name="categorie" id="categorie">
-                <option value=""> - Chose from List -</option>
-                <option value=""></option>
+                <option value=""> <- Chose from List -></option>
+                
                 <?php
                 $categories = new Categories;
                 $result = $categories->all_categories();
@@ -146,7 +144,7 @@ if (!empty($_POST))  {
                     echo $categorie->id;
                     echo '">';
                     echo $categorie->categorie_name;
-                    echo '<option>';
+                    echo '</option>';
                 }
                 ?>
             </select>
@@ -154,7 +152,7 @@ if (!empty($_POST))  {
             <label class="job-card__label" for="qualification_id">Qualification:</label>
             <select class="job-card__select" name="qualification_id" id="qualification_id">
                 <option value=""> - Chose from List -</option>
-                <option value=""></option>
+                
                 <?php
                 $qualifications = new Qualifications;
                 $result = $qualifications->all_qualifications();
@@ -163,7 +161,7 @@ if (!empty($_POST))  {
                     echo $qualification->id;
                     echo '">';
                     echo $qualification->qualification_name;
-                    echo '<option>';
+                    echo '</option>';
                 }
                 ?>
             </select>

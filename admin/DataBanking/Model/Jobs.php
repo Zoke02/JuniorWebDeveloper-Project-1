@@ -37,7 +37,7 @@ class Jobs {
     {
         $all_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM jobs WHERE user_id = $sql_id ORDER BY id ASC");
+        $result = $db->query("SELECT * FROM jobs WHERE user_id = $sql_id ORDER BY id DESC");
         while ($row = $result->fetch_assoc()) 
         {   
             $all_jobs[] = new Job($row);
@@ -63,7 +63,9 @@ class Jobs {
     {
         $last_jobs = array();
         $db = Mysql::getInstanz();
-        $result = $db->query("SELECT * FROM jobs WHERE status = 'Visible' ORDER BY id DESC LIMIT 10");
+        $result = $db->query("SELECT *
+        FROM jobs WHERE status = 'Visible' 
+        ORDER BY id DESC LIMIT 10");
         while ($row = $result->fetch_assoc()) 
         {   
             $last_jobs[] = new Job($row);
