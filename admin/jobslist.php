@@ -95,7 +95,8 @@ include "head.php";
             foreach ($all_jobs as $job) {
                 $created_on = $job->created_on;
                 $display_date = date("d-m-Y", strtotime($created_on));
-
+                $modified_on = $job->modified_on;
+                $display_modified = date("d-m-Y", strtotime($modified_on));
                 echo '<div class="cards">';
                     echo '<div class="card">';
                         echo '<h2 class="card__title">';
