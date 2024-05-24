@@ -109,6 +109,11 @@ include "head.php";
                                 echo "<li>" . "Hours: " . $job->hours . "</li>";
                                 echo "<li>" . "Sarary: " . $job->salary . "</li>";
                                 echo "<li>" . "Created: " .  $display_date . "</li>";
+                                if ($job->modified_on) {
+                                    echo "<li>" . "Last Updated: " .  $modified_on . "</li>";
+                                } else {
+                                    echo "<li>" . "Last Updated: Never" . "</li>";
+                                }
                                 echo "<li>" . "Status: " .  $job->status . "</li>";
                             echo "<ul>";
                         echo '</div>';
