@@ -44,6 +44,17 @@ class Jobs {
         }
         return $all_jobs;
     }
+    public function get_job_by_id($sql_id): array
+    {
+        $all_jobs = array();
+        $db = Mysql::getInstanz();
+        $result = $db->query("SELECT * FROM jobs WHERE id = $sql_id");
+        while ($row = $result->fetch_assoc()) 
+        {   
+            $all_jobs[] = new Job($row);
+        }
+        return $all_jobs;
+    }
 
     // get all jobs from a specific company
     public function all_jobs_from_categorie($sql_id): array

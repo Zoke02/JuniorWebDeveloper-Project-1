@@ -40,7 +40,7 @@ delete_after_365_days();
     </div>
         <h2 class="hot-title" >Last 10 created jobs!</h2>
 
-            <div class="cards-box">
+        <div class="cards-box">
 
             <?php
             $jobs = new Jobs;
@@ -76,7 +76,9 @@ delete_after_365_days();
                         echo "</p>";
                         echo "<div class='card__btn-divider'>";
                         echo '<button class="btn">';
+                        echo '<a href="viewjob.php?id='. $job->id .'">';
                         echo "More info...";
+                        echo '</a>';
                         echo "</button>";
                         echo "</div>";
                     echo "</div>";
@@ -85,9 +87,9 @@ delete_after_365_days();
             ?>
 
         </div>
-
     </div>
 </main>
+<a href=""></a>
 <?php
 include "footer.php"
 ?>
