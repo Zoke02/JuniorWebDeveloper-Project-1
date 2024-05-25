@@ -90,7 +90,6 @@ delete_after_365_days();
         </div>
     </div>
 </main>
-<a href=""></a>
 <?php
 include "footer.php"
 ?>

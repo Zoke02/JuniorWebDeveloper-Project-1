@@ -22,7 +22,7 @@ html * {
 *,
 *::before,
 *::after {
-    transition: all 0.6s ease;
+    transition: all 0.5s ease-in;
 }
 
 html {
@@ -53,6 +53,22 @@ img {
 
 a {
     text-decoration: none;
+}
+
+@keyframes drop_menu {
+    0% {
+        opacity: 0.3;
+        width: 10px;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        width: max-content;
+    }
 }
 
 /* Root */
@@ -220,11 +236,12 @@ header a {
         max-height: 85dvh;
         overflow-y: scroll;
         left: 0;
-        width: 50%;
+        width: max-content;
         background-color: var(--azure);
         z-index: 1;
         border-right: 3px solid var(--emerald);
         border-bottom: 3px solid var(--emerald);
+        animation: 0.5s drop_menu ease;
     }
     .categories {
         width: 100%;
@@ -233,6 +250,10 @@ header a {
         height: 6rem;
         border-bottom: 3px solid var(--emerald);
     }
+    .categories:first-of-type {
+        border-top: 3px solid var(--emerald);
+    }
+
     .categorie {
         width: 100%;
         border: none;
@@ -246,11 +267,12 @@ header a {
         max-height: 100dvh;
         right: 0;
         overflow-y: scroll;
-        width: 50%;
+        width: max-content;
         background-color: var(--azure);
         z-index: 1;
         border-left: 3px solid var(--emerald);
         border-bottom: 3px solid var(--emerald);
+        animation: 0.5s drop_menu ease;
     }
 }
 
