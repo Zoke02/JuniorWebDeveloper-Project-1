@@ -14,7 +14,7 @@
 
 html * {
     box-sizing: border-box;
-    word-wrap: normal;
+    word-wrap: break-word;
     margin: 0;
     letter-spacing: 0.2px;
 }
@@ -35,6 +35,14 @@ body {
         'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
         'Helvetica Neue', sans-serif;
     background-color: var(--azure);
+}
+
+/* This one needs some Testing */
+
+@media screen and (min-width: 1280px) {
+    html {
+        font-size: 72.5%;
+    }
 }
 
 /* Universal */

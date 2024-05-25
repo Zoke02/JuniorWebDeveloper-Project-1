@@ -151,6 +151,8 @@ if (!empty($_POST))  {
 
             <label class="job-card__label" for="qualification_id">Qualification:</label>
             <select class="job-card__select" name="qualification_id" id="qualification_id">
+                
+
                 <option value=""> - Chose from List -</option>
                 
                 <?php
