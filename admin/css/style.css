@@ -262,7 +262,7 @@ header a {
         z-index: 1;
         border-right: 3px solid var(--emerald);
         border-bottom: 3px solid var(--emerald);
-        animation: 0.5s drop_menu_left ease;
+        animation: 0.5s drop_menu_left linear;
     }
     .categories {
         width: 100%;
@@ -293,7 +293,7 @@ header a {
         z-index: 1;
         border-left: 3px solid var(--emerald);
         border-bottom: 3px solid var(--emerald);
-        animation: 0.5s drop_menu_right ease;
+        animation: 0.5s drop_menu_right linear;
     }
 }
 
