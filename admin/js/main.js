@@ -14,6 +14,31 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $('#menu-toogle').on('mouseover', function () {
+        $('.menu').show();
+        $('.menu-categories').hide();
+    });
+});
+
+$(document).ready(function () {
+    $('#categories-toogle').on('mouseover', function () {
+        $('.menu-categories').show();
+        $('.menu').hide();
+    });
+});
+
+$(document).ready(function () {
+    $('.menu').on('mouseleave', function () {
+        $('.menu').hide();
+    });
+});
+$(document).ready(function () {
+    $('.menu-categories').on('mouseleave', function () {
+        $('.menu-categories').hide();
+    });
+});
+
 // Function to search jobs by Title. JavaScript
 function search() {
     var input, filter, box, cards, card_title, i, txtValue;
